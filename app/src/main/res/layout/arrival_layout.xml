@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ViewAnimator xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/arrival_animator"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/arrival_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+
+        <RelativeLayout
+            android:id="@+id/arrival_top"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/rail" >
+
+            <TextView
+                android:id="@+id/arrival_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="待收货"
+                android:textColor="#fff"
+                android:textSize="23sp" >
+            </TextView>
+
+            <Button
+                android:id="@+id/arrival_edit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:background="@drawable/btn_left_bg"
+                android:text="红冲"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" >
+            </Button>
+
+            <Button
+                android:id="@+id/arrival_homeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/arrival_edit"
+                android:background="@drawable/home" />
+
+            <Button
+                android:id="@+id/arrival_confirm"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:background="@drawable/btn_bg"
+                android:text="确认"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" >
+            </Button>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout1"
+            android:layout_width="fill_parent"
+            android:layout_height="36dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/arrival_top"
+            android:background="@drawable/bg_1_3" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="15dp"
+                android:text="车次号："
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/arrival_carCch"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:layout_toRightOf="@+id/textView1"
+                android:text="123"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/textView_destination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="50dp"
+                android:layout_toRightOf="@+id/arrival_carCch"
+                android:text="新目的地："
+                android:textColor="@color/black" />
+
+            <TextView
+                android:id="@+id/textViewdl_destination"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/textView_destination"
+                android:layout_alignBottom="@+id/textView_destination"
+                android:layout_toLeftOf="@+id/buttonl_acd"
+                android:layout_toRightOf="@+id/textView_destination"
+                android:maxLines="2"
+                android:text="宝钢运输公司六号"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/buttonl_acd"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_alignBaseline="@+id/textViewdl_destination"
+                android:layout_alignBottom="@+id/textViewdl_destination"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:background="@drawable/btn_change_target"
+                android:padding="5dp"
+                android:text="修改目的地"
+                android:textColor="@color/black" />
+        </RelativeLayout>
+
+        <!--  -->
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/relativeLayout1" >
+
+            <TextView
+                android:id="@id/android:empty"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:text="对不起，没有数据显示"
+                android:textSize="14sp" >
+            </TextView>
+
+            <ListView
+                android:id="@+id/arrival_listview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentLeft="true"
+                android:layout_marginBottom="25px"
+                android:fadingEdge="none" >
+            </ListView>
+        </RelativeLayout>
+
+        <TextView
+            android:id="@+id/arrival_arrived_all"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bottom_bg"
+            android:gravity="right|center"
+            android:textColor="@color/black" >
+        </TextView>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/destion_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" >
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout11"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/rail" >
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                android:text="选择目的地"
+                android:textColor="@color/white"
+                android:textSize="23sp" >
+            </TextView>
+
+            <Button
+                android:id="@+id/destion_back"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10px"
+                android:background="@drawable/btn_left_bg"
+                android:text="返回"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" >
+            </Button>
+
+            <Button
+                android:id="@+id/destion_sure"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="10px"
+                android:background="@drawable/btn_bg"
+                android:text="确认"
+                android:textColor="@android:color/white"
+                android:textSize="15sp" >
+            </Button>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout3"
+            android:layout_width="fill_parent"
+            android:layout_height="36dp"
+            android:layout_below="@+id/relativeLayout11"
+            android:background="@drawable/bg_1_3"
+            android:gravity="center" >
+
+            <TextView
+                android:id="@+id/new_dest"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="250dp"
+                android:text="新目的地"
+                android:textColor="#000" />
+
+            <TextView
+                android:id="@+id/dest_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/new_dest"
+                android:layout_alignBottom="@+id/new_dest"
+                android:layout_alignLeft="@+id/new_dest"
+                android:layout_marginLeft="70dp"
+                android:textColor="#000" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout2"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/relativeLayout3" >
+
+            <ListView
+                android:id="@+id/destination_listview"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:cacheColorHint="@android:color/transparent" >
+            </ListView>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</ViewAnimator>

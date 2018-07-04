@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">司机端</string>
+    <string name="checked_weight_sum">已装毛重：%1$.3f吨   已装净重：%2$.3f吨  已装件数：%3$d件</string>
+    <string name="checked_select_sum">已选毛重：%1$.3f吨   已选净重：%2$.3f吨  件数：%3$d/%4$d件</string>
+    <string name="AgentService">http://m.baosteel.net.cn/iPlatMBS/AgentService</string>
+    <string name="LoginService">http://m.baosteel.net.cn/iPlatMBS/LoginService</string>
+	<string name="appcode_name">com.baosight.3pl</string>
+    <!--
+	真实环境
+	<string name="AgentService">http://m.baosteel.net.cn/iPlatMBS/AgentService</string>
+    <string name="LoginService">http://m.baosteel.net.cn/iPlatMBS/LoginService</string>
+	<string name="appcode_name">com.baosight.3pl</string>    -->
+    <!--
+	测试环境
+    <string name="AgentService">http://202.101.47.84:80/iPlatMBS/AgentService</string>
+    <string name="LoginService">http://202.101.47.84:80/iPlatMBS/LoginService</string>
+	<string name="appcode_name">com.baosight.3pltest</string>    -->
+    <string name="entruck_to_string">装车</string>
+    <string name="depart_to_string">发车</string>
+    <string name="entruck_confirm_title">装车确认</string>
+    <string name="depart_title">待发车</string>
+
+    <color name="lightgray">#7dafc6</color>
+    <color name="gray">#548ca3</color>
+    <color name="black">#000000</color>
+    <color name="white">#ffffff</color>
+    <color name="half_transparent">#aa000000</color>
+
+    <string-array name="sign_excetion_reason">
+        <item>机械损伤</item>
+        <item>包装破损</item>
+        <item>淋雨</item>
+        <item>变形</item>
+        <item>雨天进货</item>
+        <item>捆包号错误</item>
+        <item>规格异常</item>
+        <item>其他</item>
+    </string-array>
+
+</resources>

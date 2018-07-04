@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white" >
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout1"
+        android:layout_width="fill_parent"
+        android:layout_height="60px"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rail" >
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="筛 选"
+            android:textColor="@color/white"
+            android:textSize="23sp" >
+        </TextView>
+
+        <Button
+            android:id="@+id/buttoncoa_back"
+            android:layout_width="100px"
+            android:layout_height="50px"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10px"
+            android:background="@drawable/btn_left_bg"
+            android:text="返回"
+            android:textColor="@android:color/white"
+            android:textSize="15sp" >
+        </Button>
+
+        <Button
+            android:id="@+id/buttoncoa_commit"
+            android:layout_width="100px"
+            android:layout_height="50px"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10px"
+             android:background="@drawable/btn_bg"
+            android:text="确认"
+            android:textColor="@android:color/white"
+            android:textSize="15sp">
+        </Button>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/relativeLayout1" >
+
+        <TableLayout
+            android:id="@+id/tableLayout1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" >
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/data_bg_1"
+                android:paddingLeft="75dp"
+                android:paddingRight="75dp" >
+
+                <TextView
+                    android:id="@+id/textView8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提单下发起始时间："
+                    android:textColor="@color/black"
+                    android:textSize="16sp" >
+                </TextView>
+
+                <Button
+                    android:id="@+id/start_time_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="2012-2-02"
+                    android:textSize="16sp" >
+                </Button>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/tableRow4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/data_bg_1"
+                android:paddingLeft="75dp"
+                android:paddingRight="75dp" >
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="提单下发结束时间："
+                    android:textColor="@color/black"
+                    android:textSize="16sp" >
+                </TextView>
+
+                <Button
+                    android:id="@+id/end_time_button"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:text="2013-2-02"
+                    android:textSize="16sp" >
+                </Button>
+            </TableRow>
+        </TableLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/relativeLayout2" >
+
+        <ListView
+            android:id="@+id/choice_achieve_listview"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:visibility="invisible" >
+        </ListView>
+    </RelativeLayout>
+
+</RelativeLayout>

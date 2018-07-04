@@ -1,0 +1,191 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:widget="http://schemas.android.com/apk/res/com.baosight.logistics.activity"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/cyclometerbg"
+    android:orientation="vertical" >
+
+    <LinearLayout
+        android:id="@+id/cyclometer_input_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:baselineAligned="false"
+        android:gravity="center"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp" >
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cyclometer_input"
+            android:gravity="center"
+            android:padding="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="起始里程"
+                android:textColor="#333333"
+                android:textSize="11dp" />
+
+            <Button
+                android:id="@+id/cyclometer_left_btn1"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/arrowleft" />
+
+            <EditText
+                android:id="@+id/cyclometer_start_edit"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="6"
+                android:text="0"
+                android:textColor="#ff6600"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/cyclometer_left_btn2"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/arrowright" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:layout_weight="1"
+            android:background="@drawable/cyclometer_input"
+            android:gravity="center"
+            android:padding="5dp" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="终点里程"
+                android:textColor="#333333"
+                android:textSize="11dp" />
+
+            <Button
+                android:id="@+id/cyclometer_right_btn1"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/arrowleft" />
+
+            <EditText
+                android:id="@+id/cyclometer_end_edit"
+                android:layout_width="45dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="10dp"
+                android:background="@null"
+                android:gravity="center"
+                android:inputType="number"
+                android:maxLength="6"
+                android:text="0"
+                android:textColor="#ff6600"
+                android:textSize="12dp" />
+
+            <Button
+                android:id="@+id/cyclometer_right_btn2"
+                android:layout_width="20dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/arrowright" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/cyclometer_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cyclometer_input_layout"
+        android:gravity="center" >
+
+        <com.ia.logistics.comm.widget.CyclometerView
+            android:id="@+id/CyclometerView1"
+            android:layout_width="200dp"
+            android:layout_height="139dp" />
+
+        <com.ia.logistics.comm.widget.CyclometerView
+            android:id="@+id/CyclometerView2"
+            android:layout_width="200dp"
+            android:layout_height="136dp"
+            android:layout_marginLeft="50dp"
+            widget:cyclometerBg="true" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/cyclometer_main"
+        android:gravity="center" >
+
+        <Button
+            android:id="@+id/cyclometer_back_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/cyclometerbt"
+            android:text="返回"
+            android:textColor="#333333"
+            android:textSize="11dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/cyclometer_input"
+            android:gravity="center" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="总里程"
+                android:textColor="#333333"
+                android:textSize="11dp" />
+
+            <TextView
+                android:id="@+id/cyclometer_total_tv"
+                android:layout_width="40dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="0"
+                android:gravity="center"
+                android:textColor="#ff6600"
+                android:textSize="11dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:text="公里"
+                android:textColor="#333333"
+                android:textSize="11dp" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/cyclometer_next_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_marginLeft="50dp"
+            android:layout_marginRight="50dp"
+            android:layout_weight="1"
+            android:background="@drawable/cyclometerbt"
+            android:text="下一步"
+            android:textColor="#333333"
+            android:textSize="11dp" />
+    </LinearLayout>
+
+</RelativeLayout>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Base application theme is the default theme. -->
+    <style name="MyTheme.NoTitleBar.CustomBackground" parent="@android:Theme.Black">
+        <item name="android:windowBackground">@drawable/maintheme</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Theme.CustomDialog" parent="android:style/Theme.Dialog"></style>
+
+    <style name="Theme.Wallpaper" parent="android:style/Theme.Wallpaper">
+        <item name="android:colorForeground">#fff</item>
+    </style>
+
+    <style name="my_dialog" parent="@android:style/Theme.Dialog">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowBackground">@drawable/fill_box</item>
+    </style>
+
+    <style name="ListItem.Divider" parent="@android:style/Widget">
+        <item name="android:background">@color/K_black_light_6</item>
+        <item name="android:focusable">false</item>
+        <item name="android:clickable">false</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+    </style>
+
+    <style name="ListItem.SpinnerItemNormal" parent="@android:style/Widget">
+        <item name="android:background">@drawable/spinner_item_bg</item>
+        <item name="android:paddingLeft">12.0dip</item>
+        <item name="android:paddingTop">12.0dip</item>
+        <item name="android:paddingRight">4.0dip</item>
+        <item name="android:paddingBottom">12.0dip</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_height">48.0dip</item>
+    </style>
+
+    <style name="ListItem.SpinnerItemDivider" parent="@style/ListItem.Divider">
+        <item name="android:background">@color/L_black_light_2</item>
+    </style>
+
+    <style name="Theme.HalfTranslucent" parent="@android:style/Theme.Translucent">
+        <item name="android:windowBackground">@color/half_transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+</resources>

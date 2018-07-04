@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- LoginActivity -->
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <!-- 用户名和密码输入 -->
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:weightSum="6" >
+
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="2" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15.0px"
+            android:layout_weight="4"
+            android:orientation="vertical"
+            android:paddingBottom="25dp"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
+            android:paddingTop="20dp" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="用户名:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/editTextloginid"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="请输入帐号"
+                android:singleLine="true"
+                android:text="" >
+
+                <requestFocus>
+                </requestFocus>
+            </EditText>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="密码:"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textColor="@color/black" >
+            </TextView>
+
+            <EditText
+                android:id="@+id/editTextloginpassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:singleLine="true"
+                android:text="" >
+            </EditText>
+
+            <Button
+                android:id="@+id/buttonLoginok"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:text="登       录"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>
