@@ -14,5 +14,8 @@
     <color name="bgColor">#000000</color>
     <color name="L_black_light_2">#ff444444</color>
     <color name="K_black_light_6">#ffe5e5e5</color>
-
+    <color name="bc3">#f4f4f4</color>
+    <color name="bc4">#F8F8F8</color>
+    <color name="tc2">#cccccc</color>
+    <color name="tc6">#333333</color>
 </resources>

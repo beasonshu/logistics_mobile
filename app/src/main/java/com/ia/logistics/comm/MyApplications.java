@@ -16,32 +16,32 @@ public class MyApplications extends Application {
 
 	private static MyApplications applications;
 	/**
-	 * ˾������
+	 * ???????
 	 */
 	private String useId;
 
 	/**
-	 * ˾������
+	 * ???????
 	 */
 	private String user_name;
 
 	/**
-	 * �����̴���
+	 * ?????????
 	 */
 	private String provider_id;
 
 	/**
-	 * ����������
+	 * ??????????
 	 */
 	private String provide_name;
 
 	/**
-	 * ����״̬
+	 * ??????
 	 */
 	private String trip_state;
 
 	/**
-	 * ��������,ͨ��agent�����м������
+	 * ????????,???agent?????м??????
 	 */
 	private EiServiceAgent agent;
 	
@@ -106,7 +106,7 @@ public class MyApplications extends Application {
 		return list;
 	}
 
-	// ������Ŀ
+	// ???????
 	public boolean addItem(Map<String, String> map) {
 		for (Map<String, String> iterable_element : list) {
 			if (map.get("package_id")
@@ -119,7 +119,7 @@ public class MyApplications extends Application {
 		return true;
 	}
 
-	// ����
+	// ????
 	private void sort() {
 		// TODO Auto-generated method stub
 		if (!list.isEmpty()) {
@@ -141,7 +141,7 @@ public class MyApplications extends Application {
 	}
 
 
-	boolean m_bKeyRight = true; // ��ȨKey��ȷ����֤ͨ��
+	boolean m_bKeyRight = true; // ???Key???????????
 
 	
 
