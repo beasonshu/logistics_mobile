@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ia.logistics.activity.BarCodeActivity;
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.activity.Sign_ConfirmActivity;
 import com.ia.logistics.comm.AsyncSendDataTask;
 import com.ia.logistics.comm.MyApplications;

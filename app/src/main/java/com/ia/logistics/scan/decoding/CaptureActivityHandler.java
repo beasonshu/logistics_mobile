@@ -12,7 +12,7 @@ import android.os.Message;
 import android.util.Log;
 
 import com.ia.logistics.activity.CaptureActivity;
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.scan.carmera.CameraManager;
 import com.ia.logistics.scan.view.ViewfinderResultPointCallback;
 import com.google.zxing.BarcodeFormat;

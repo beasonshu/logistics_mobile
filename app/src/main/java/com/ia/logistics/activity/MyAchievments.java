@@ -14,7 +14,6 @@ import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.baosight.logistics.activity.R;
 import com.ia.logistics.comm.AsyncSendDataTask;
 import com.ia.logistics.comm.CommSet;
 import com.ia.logistics.comm.MyApplications;

@@ -14,7 +14,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.DateUtils;
 import com.ia.logistics.model.receive.PerStatisticsDetModel;
 

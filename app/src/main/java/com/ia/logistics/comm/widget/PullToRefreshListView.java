@@ -20,7 +20,7 @@ import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 
 public class PullToRefreshListView extends ListView implements OnScrollListener {
 

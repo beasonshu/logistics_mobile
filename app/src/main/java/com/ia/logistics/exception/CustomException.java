@@ -34,7 +34,7 @@ import com.baosight.iplat4mandroid.core.constant.EiServiceConstant;
 import com.baosight.iplat4mandroid.core.ei.eiinfo.EiBlockMeta;
 import com.baosight.iplat4mandroid.core.ei.eiinfo.EiColumn;
 import com.baosight.iplat4mandroid.core.ei.eiinfo.EiInfo;
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.CommSet;
 import com.ia.logistics.comm.DateUtils;
 import com.ia.logistics.comm.MyApplications;

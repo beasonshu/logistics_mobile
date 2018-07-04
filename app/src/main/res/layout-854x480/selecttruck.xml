@@ -8,7 +8,8 @@
     android:orientation="vertical"
     android:paddingTop="10dp"
     android:paddingLeft="50dp"
-    android:paddingRight="50dp">
+    android:paddingRight="50dp"
+    android:background="@drawable/select_car_bg">
 
     <!-- 车头和挂车 -->
 

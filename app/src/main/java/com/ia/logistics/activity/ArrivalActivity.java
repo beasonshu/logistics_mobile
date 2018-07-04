@@ -29,7 +29,6 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewAnimator;
 
-import com.baosight.logistics.activity.R;
 import com.ia.logistics.adapter.ArrivalAdapter;
 import com.ia.logistics.adapter.DestinationAdapter;
 import com.ia.logistics.comm.AsyncSendDataTask;

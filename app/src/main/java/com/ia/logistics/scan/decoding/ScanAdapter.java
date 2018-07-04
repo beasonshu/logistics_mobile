@@ -13,7 +13,7 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.MyApplications;
 
 public class ScanAdapter extends BaseAdapter {

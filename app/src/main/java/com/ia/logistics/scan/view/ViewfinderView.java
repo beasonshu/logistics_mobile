@@ -29,7 +29,7 @@ import android.graphics.Rect;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.scan.carmera.CameraManager;
 import com.google.zxing.ResultPoint;
 

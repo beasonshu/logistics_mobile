@@ -11,7 +11,7 @@ import android.graphics.Paint;
 import android.util.AttributeSet;
 import android.view.View;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 
 public class CyclometerView extends View {
 

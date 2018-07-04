@@ -17,7 +17,7 @@ import android.view.ViewGroup.LayoutParams;
 import android.view.animation.Interpolator;
 import android.widget.LinearLayout;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 
 /**
  * Numeric wheel view.

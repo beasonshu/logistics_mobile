@@ -6,17 +6,19 @@
     <string name="checked_select_sum">已选毛重：%1$.3f吨   已选净重：%2$.3f吨  件数：%3$d/%4$d件</string>
     <string name="AgentService">http://m.baosteel.net.cn/iPlatMBS/AgentService</string>
     <string name="LoginService">http://m.baosteel.net.cn/iPlatMBS/LoginService</string>
-	<string name="appcode_name">com.baosight.3pl</string>
+	<string name="appcode_name">com.ia.3pl</string>
     <!--
 	真实环境
 	<string name="AgentService">http://m.baosteel.net.cn/iPlatMBS/AgentService</string>
     <string name="LoginService">http://m.baosteel.net.cn/iPlatMBS/LoginService</string>
-	<string name="appcode_name">com.baosight.3pl</string>    -->
+	<string name="appcode_name">com.ia.3pl</string>
+    -->
     <!--
 	测试环境
     <string name="AgentService">http://202.101.47.84:80/iPlatMBS/AgentService</string>
     <string name="LoginService">http://202.101.47.84:80/iPlatMBS/LoginService</string>
-	<string name="appcode_name">com.baosight.3pltest</string>    -->
+	<string name="appcode_name">com.ia.3pltest</string>
+    -->
     <string name="entruck_to_string">装车</string>
     <string name="depart_to_string">发车</string>
     <string name="entruck_confirm_title">装车确认</string>

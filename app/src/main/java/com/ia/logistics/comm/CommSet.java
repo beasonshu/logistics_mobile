@@ -27,7 +27,7 @@ import com.baosight.iplat4mandroid.core.ei.agent.EiServiceAgent;
 import com.baosight.iplat4mandroid.core.ei.eiinfo.EiInfo;
 import com.baosight.iplat4mandroid.core.uitls.ConfigUtil;
 import com.baosight.iplat4mandroid.core.uitls.StartUpHelper;
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.model.receive.LoadListModel;
 import com.ia.logistics.sql.ADVT_DBHelper;
 
@@ -404,20 +404,20 @@ public class CommSet {
 		}
 	}
 
-	public static EiServiceAgent getAgent(Activity mActivity) {
-		mActivity.getIntent().putExtra(
-				KeyConstant.MBS_HTTPSURL,
-				ConfigUtil.getConfiguration(mActivity,
-						R.string.LoginService));// LoginService
-		mActivity.getIntent().putExtra(
-				KeyConstant.MBS_HTTPURL,
-				ConfigUtil.getConfiguration(mActivity,
-						R.string.AgentService));// LoginService
-
-		mActivity.getIntent().putExtra(KeyConstant.AGENT_TYPE, "anonymous");// LoginService
-		StartUpHelper startUpHelper = StartUpHelper.getStartUpHelper(mActivity);
-		startUpHelper.setUserSession();
-		EiServiceAgent agent = startUpHelper.getServiceAgent();
-		return agent;
-	}
+//	public static EiServiceAgent getAgent(Activity mActivity) {
+//		mActivity.getIntent().putExtra(
+//				KeyConstant.MBS_HTTPSURL,
+//				ConfigUtil.getConfiguration(mActivity,
+//						R.string.LoginService));// LoginService
+//		mActivity.getIntent().putExtra(
+//				KeyConstant.MBS_HTTPURL,
+//				ConfigUtil.getConfiguration(mActivity,
+//						R.string.AgentService));// LoginService
+//
+//		mActivity.getIntent().putExtra(KeyConstant.AGENT_TYPE, "anonymous");// LoginService
+//		StartUpHelper startUpHelper = StartUpHelper.getStartUpHelper(mActivity);
+//		startUpHelper.setUserSession();
+//		EiServiceAgent agent = startUpHelper.getServiceAgent();
+//		return agent;
+//	}
 }

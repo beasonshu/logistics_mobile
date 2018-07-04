@@ -15,7 +15,7 @@ import android.widget.CompoundButton;
 import android.widget.CompoundButton.OnCheckedChangeListener;
 import android.widget.TextView;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.CommSet;
 import com.ia.logistics.sql.ADVT_DBHelper;
 import com.ia.logistics.sql.SQLTransaction;

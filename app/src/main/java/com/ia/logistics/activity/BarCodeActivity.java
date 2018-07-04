@@ -10,7 +10,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.ImageView;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.CommSet;
 import com.ia.logistics.comm.MyApplications;
 import com.ia.logistics.model.receive.SignDetilModel;

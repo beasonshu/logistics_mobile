@@ -1,10 +1,5 @@
 package com.ia.logistics.activity;
 
-import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
-
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Context;
@@ -37,9 +32,10 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewAnimator;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.AsyncSendDataTask;
 import com.ia.logistics.comm.CommSet;
+import com.ia.logistics.comm.Constant;
 import com.ia.logistics.comm.InterfaceDates;
 import com.ia.logistics.comm.StringUtil;
 import com.ia.logistics.comm.widget.PullToRefreshListView;
@@ -47,7 +43,11 @@ import com.ia.logistics.service.MainLogicService;
 import com.ia.logistics.service.Task;
 import com.ia.logistics.sql.ADVT_DBHelper;
 import com.ia.logistics.sql.SQLTransaction;
-import com.ia.logistics.comm.Constant;
+
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class MybillActivity extends BaseActivity {
 
@@ -261,7 +261,8 @@ public class MybillActivity extends BaseActivity {
 		myBillAdapter = new MyBillAdapter(MybillActivity.this);
 		animator = (ViewAnimator) findViewById(R.id.mybill_animator);
 		slideInLeft = AnimationUtils
-				.loadAnimation(this, R.anim.i_slide_in_left);
+				.loadAnimation(this, R
+						.anim.i_slide_in_left);
 		slideInRight = AnimationUtils.loadAnimation(this,
 				R.anim.i_slide_in_right);
 		slideOutLeft = AnimationUtils.loadAnimation(this,

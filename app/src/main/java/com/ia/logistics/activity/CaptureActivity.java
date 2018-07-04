@@ -19,7 +19,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.scan.carmera.CameraManager;
 import com.ia.logistics.scan.decoding.CaptureActivityHandler;
 import com.ia.logistics.scan.decoding.InactivityTimer;

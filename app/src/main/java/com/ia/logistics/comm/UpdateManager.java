@@ -28,7 +28,7 @@ import android.widget.ProgressBar;
 import android.widget.Toast;
 
 import com.ia.logistics.activity.LoginActivity;
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.service.MainLogicService;
 import com.ia.logistics.sql.SQLTransaction;
 

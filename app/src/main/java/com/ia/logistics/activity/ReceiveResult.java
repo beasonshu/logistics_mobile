@@ -24,7 +24,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.baosight.logistics.activity.R;
+import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.AsyncSendDataTask;
 import com.ia.logistics.comm.CommSet;
 import com.ia.logistics.comm.InterfaceDates;
