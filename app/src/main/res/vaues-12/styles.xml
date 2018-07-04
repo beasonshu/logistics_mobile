@@ -1,0 +1,11 @@
+<resources>
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="android:textColorHint">@color/tc2</item>
+        <item name="android:textColor">@color/tc6</item>
+        <item name="android:textSize">@dimen/text_size_16</item>
+        <item name="android:textCursorDrawable">@mipmap/ic_cursor</item>
+    </style>
+
+</resources>
+
