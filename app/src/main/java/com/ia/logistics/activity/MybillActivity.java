@@ -6,7 +6,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.graphics.drawable.BitmapDrawable;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -32,29 +31,20 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewAnimator;
 
-import com.ia.logistics.activity.R;
-import com.ia.logistics.comm.AsyncSendDataTask;
 import com.ia.logistics.comm.CommSet;
-import com.ia.logistics.comm.Constant;
-import com.ia.logistics.comm.InterfaceDates;
 import com.ia.logistics.comm.StringUtil;
 import com.ia.logistics.comm.widget.PullToRefreshListView;
-import com.ia.logistics.service.MainLogicService;
-import com.ia.logistics.service.Task;
-import com.ia.logistics.sql.ADVT_DBHelper;
-import com.ia.logistics.sql.SQLTransaction;
+import com.ia.logistics.model.MyBillBean;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import java.util.HashMap;
-import java.util.Map;
 
 public class MybillActivity extends BaseActivity {
 
 	private PullToRefreshListView mListView;
 	private PopupWindow popupWindow;
 	private MyBillAdapter myBillAdapter;
-	private ArrayList<Map<String, String>> dataList;
+	private ArrayList<MyBillBean> dataList;
 	private Button sortLevelButton, filterButton, scanbutton,
 			buttonback, buttoncommit, buttonbegin, buttonover;
 	private ViewAnimator animator;
@@ -70,7 +60,7 @@ public class MybillActivity extends BaseActivity {
 
 			@Override
 			public void onRefresh() {
-				loadBills();
+                mListView.onRefreshComplete();
 			}
 		});
 		scanbutton.setOnClickListener(new OnClickListener() {
@@ -104,6 +94,24 @@ public class MybillActivity extends BaseActivity {
 //				init(0,null);
 			}
 		});
+
+		dataList = new ArrayList<>();
+		for (int i=0;i<20;i++){
+			MyBillBean myBillBean = new MyBillBean();
+			myBillBean.actCount = 10+i;
+			myBillBean.billID ="ABCWDWA"+i;
+			myBillBean.downloadBar= "0";
+			myBillBean.excuteStratTime ="2018-7-5";
+			myBillBean.grossWeight="10";
+			myBillBean.netWeight="10";
+			myBillBean.spotName ="仓库"+i;
+			myBillBean.destName = "A仓库"+i;
+			myBillBean.starLevel = (i%2)+"";
+			myBillBean.uploadTime="2018-7-5";
+			dataList.add(myBillBean);
+		}
+
+		mListView.setAdapter(myBillAdapter);
 	}
 
 	@Override
@@ -144,51 +152,6 @@ public class MybillActivity extends BaseActivity {
 		}.execute();*/
 	}
 
-	public class LoadPackByBill extends AsyncTask<Void, Void, String>{
-		private int index;
-		private Context mContext;
-		public LoadPackByBill(int index,Context context) {
-			this.index = index;
-			this.mContext = context;
-		}
-
-		@Override
-		protected void onPreExecute() {
-			// TODO Auto-generated method stub
-			dataList.get(index).put("control_status", "1");
-			myBillAdapter.notifyDataSetChanged();
-			super.onPreExecute();
-		}
-		/* (non-Javadoc)
-		 * @see android.os.AsyncTask#doInBackground(Params[])
-		 */
-		@Override
-		protected String doInBackground(Void... params) {
-			// TODO Auto-generated method stub
-			return InterfaceDates.getInstance().insertPackInfo(dataList.get(index).get("bill_id"), mContext);
-		}
-
-
-		@Override
-		protected void onPostExecute(String result) {
-			// TODO Auto-generated method stub
-			// 更改数据提单表中提单下载状态
-			dataList.get(index).put("package_download_status", "1");
-			if (result.startsWith("2#")) {
-				Map<String, String> updateColumns = new HashMap<String, String>();
-				updateColumns.put("package_download_status", "1");
-				String where1 = "where bill_id='"+ dataList.get(index).get("bill_id") + "'";
-				ADVT_DBHelper.getAdvtDBHelper().update(Constant.Table.TB_BILL,
-						updateColumns, where1);
-				dataList.get(index).put("control_status", "0");
-			}else {
-				Toast.makeText(MybillActivity.this, "该提单下没有材料号！", Toast.LENGTH_SHORT).show();
-			}
-			myBillAdapter.notifyDataSetChanged();
-			super.onPostExecute(result);
-		}
-
-	}
 
 	/**
 	 * 显示
@@ -212,7 +175,7 @@ public class MybillActivity extends BaseActivity {
 					if (popupWindow!=null) {
 						popupWindow.dismiss();
 					}
-					init(0,null);
+//					init(0,null);
 				}
 			});
 
@@ -223,7 +186,7 @@ public class MybillActivity extends BaseActivity {
 					if (popupWindow!=null) {
 						popupWindow.dismiss();
 					}
-					init(1,null);
+//					init(1,null);
 				}
 			});
 		}
@@ -281,7 +244,7 @@ public class MybillActivity extends BaseActivity {
 			@Override
 			public void onItemClick(AdapterView<?> parent, View view,
 									int position, long id) {
-				if ("0".equals(dataList.get(position - 1).get(
+				/*if ("0".equals(dataList.get(position - 1).get(
 						"package_download_status"))) {
 					if (CommSet.checkNet(MybillActivity.this)) {
 						new LoadPackByBill(position - 1, MybillActivity.this).execute();
@@ -293,14 +256,14 @@ public class MybillActivity extends BaseActivity {
 					bundle.putString("bill_id",
 							dataList.get(position - 1).get("bill_id"));
 					changeViewByAct(EntruckingActivity.class,bundle);
-				}
+				}*/
 			}
 
 		});
 	}
 
 	// 初始化
-	public void init(final int i,final String where) {
+	/*public void init(final int i,final String where) {
 		String order = null;
 		order = "order by landing_spot_name ";
 		if (i == 0) {
@@ -327,7 +290,7 @@ public class MybillActivity extends BaseActivity {
 		if (!buttoncommit.isEnabled()) {
 			buttoncommit.setEnabled(true);
 		}
-	}
+	}*/
 
 	public void choiceOfBill() {
 		filter_warehouse_num.setOnTouchListener(new OnTouchListener() {
@@ -375,7 +338,7 @@ public class MybillActivity extends BaseActivity {
 						}else {
 							where = "where upload_time >= "+CommSet.setToStringDate(buttonbegin.getText().toString())+" and upload_time<="+CommSet.setToStringDate(buttonover.getText().toString())+" ";
 						}
-						init(i, where);
+//						init(i, where);
 						//init(-1, where);
 						animator.setInAnimation(slideInRight);
 						animator.setOutAnimation(slideOutRight);
@@ -509,25 +472,19 @@ public class MybillActivity extends BaseActivity {
 			} else {
 				holder = (ViewHolder) convertView.getTag();
 			}
-			holder.warehourse.setText(dataList.get(position).get("warehouse_num"));
-			holder.billID.setText(dataList.get(position).get("bill_id"));
+			holder.warehourse.setText(dataList.get(position).warehourse);
+			holder.billID.setText(dataList.get(position).billID);
 			holder.starLevel.setImageResource(starlevels["1".equals(dataList
-					.get(position).get("urgency_degree")) ? 0 : 1]);
-			holder.spotName.setText(dataList.get(position).get("landing_spot_name")+(("".equals(dataList.get(position).get("landing_spot_num"))?"":dataList
-					.get(position).get("landing_spot_num").substring(dataList.get(position).get("landing_spot_num").length() - 3))) );
-			holder.destName.setText(dataList.get(position)
-					.get("dest_spot_name"));
-			holder.uploadTime.setText(CommSet.getGSHStringDate(dataList.get(
-					position).get("upload_time")));
-			holder.excuteStratTime.setText(CommSet.getGSHStringDate(dataList
-					.get(position).get("excute_time")));
-			holder.grossWeight.setText(dataList.get(position).get("completed_gross_weight")+"/"+dataList.get(position).get("sum_gross_weight"));
-			holder.netWeight.setText(dataList.get(position).get("completed_net_weight")+"/"+dataList.get(position).get("sum_net_weight"));
-			holder.actCount.setText(dataList.get(position).get("completed_act_count")+"/"+dataList.get(position).get("sum_act_count"));
-			holder.downloadBar.setVisibility("0".equals(dataList.get(position).get(
-					"control_status")) ? (View.INVISIBLE): (View.VISIBLE));
-			holder.downloading.setImageResource("0".equals(dataList.get(position).get(
-					"package_download_status")) ? R.drawable.arrows_1 : R.drawable.arrows);
+					.get(position).starLevel) ? 0 : 1]);
+			holder.spotName.setText(dataList.get(position).spotName);
+			holder.destName.setText(dataList.get(position).destName);
+			holder.uploadTime.setText(dataList.get(position).uploadTime);
+			holder.excuteStratTime.setText(dataList.get(position).excuteStratTime);
+			holder.grossWeight.setText(dataList.get(position).grossWeight+"/"+dataList.get(position).grossWeight);
+			holder.netWeight.setText(dataList.get(position).netWeight+"/"+dataList.get(position).netWeight);
+			holder.actCount.setText(dataList.get(position).actCount+"/"+dataList.get(position).actCount);
+			holder.downloadBar.setVisibility("0".equals(dataList.get(position).downloadBar) ? (View.INVISIBLE): (View.VISIBLE));
+			holder.downloading.setImageResource("0".equals(dataList.get(position).downloading) ? R.drawable.arrows_1 : R.drawable.arrows);
 			/*if(!"00".equals(dataList.get(position).get("tdzt"))) {
 				holder.bt_del.setVisibility(View.GONE);
 			} else {
@@ -556,68 +513,7 @@ public class MybillActivity extends BaseActivity {
 							public void onClick(DialogInterface dialog,
 												int which) {
 								dialog.dismiss();
-								new AsyncSendDataTask(context) {
 
-									@Override
-									protected String doInBackground(Object... params) {
-
-										if ((Boolean) params[0]) {// 有网络
-											if(InterfaceDates.getInstance().HavingOldTrip(context)){
-												return "4#";
-											}
-											// 删除指定的提单号
-											String result_flag = InterfaceDates.getInstance().delBillId(dataList.get(index),context);
-											if (result_flag.startsWith("2#")) {
-												System.out.println("-----提单状态"+dataList.get(index).get("tdzt"));
-												SQLTransaction.getInstance().delPackageByTDH(dataList.get(index));
-											}
-											return result_flag;
-										} else { // 没有网络
-											SQLTransaction.getInstance().delPackageByTDH(dataList.get(index));
-											dataList.clear();
-										}
-										HashMap<String, Object> map = new HashMap<String, Object>();
-										map.put("package_to_delete",dataList.get(index));
-										Task task = new Task(Constant.ActivityTaskId.TASK_DELETE_BILL,map);
-										MainLogicService.addNewTask(task);
-										return "3#";
-									}
-
-									@Override
-									protected void onPostExecute(String result) {
-										if (result.startsWith("1#")) {
-											CommSet.d("baosight", "数据库出错");
-										} else {
-											/*if (result.startsWith("2#")) {
-												if("00".equals(dataList.get(index).get("tdzt"))){
-													dataList.remove(index);
-													notifyDataSetChanged();
-													Toast.makeText(context, "已删除",Toast.LENGTH_SHORT)	.show();
-												}else{
-
-													Toast.makeText(MybillActivity.this, "该提单不能删除!", 1).show();
-												}
-											}*/
-											if(result.startsWith("2#")){
-												dataList.remove(index);
-												notifyDataSetChanged();
-												Toast.makeText(context, "已删除",Toast.LENGTH_SHORT)	.show();
-											}
-											if (result.startsWith("3#")) {
-												dataList.remove(index);
-												notifyDataSetChanged();
-											}
-											if (result.startsWith("0#")) {
-												Toast.makeText(context,"3PL出错,删除提单号失败!",Toast.LENGTH_SHORT).show();
-											}
-											if(result.startsWith("4#")){
-												Toast.makeText(context, "存在未完成的车次,请完成当前车次!", 1).show();
-											}
-										}
-										super.onPostExecute(result);
-									}
-
-								}.execute(CommSet.checkNet(context));
 							}
 
 						});
