@@ -115,43 +115,7 @@ public class MybillActivity extends BaseActivity {
 		mListView.setAdapter(myBillAdapter);
 	}
 
-	@Override
-	protected void onResume() {
-		super.onResume();
-		/*init(-1,null);
-		if (dataList==null||dataList.size()==0) {
-			if (mListView!=null) {
-				mListView.onRefreshStart();
-				loadBills();
-			}
-		}*/
-	}
 
-	private void loadBills() {
-		if (!CommSet.checkNet(MybillActivity.this)) {
-			Toast.makeText(MybillActivity.this, "网络连接失败！", Toast.LENGTH_SHORT).show();
-			if (mListView!=null) {
-				mListView.onRefreshComplete();
-			}
-			return;
-		}
-		/*new AsyncTask<Void, Void, String>() {
-			protected String doInBackground(Void... params) {
-				return InterfaceDates.getInstance().inserBillInfo();
-			}
-
-			@Override
-			protected void onPostExecute(String result) {
-				if (result.startsWith("2#")) {
-					init(-1,null);
-					mListView.onRefreshComplete();
-				}else {
-					Toast.makeText(MybillActivity.this, result, Toast.LENGTH_SHORT).show();
-				}
-			}
-
-		}.execute();*/
-	}
 
 
 	/**
@@ -258,6 +222,11 @@ public class MybillActivity extends BaseActivity {
 							dataList.get(position - 1).get("bill_id"));
 					changeViewByAct(EntruckingActivity.class,bundle);
 				}*/
+
+				Bundle bundle = new Bundle();
+				bundle.putString("bill_id",
+						dataList.get(position - 1).billID);
+				changeViewByAct(EntruckingActivity.class,bundle);
 			}
 
 		});
