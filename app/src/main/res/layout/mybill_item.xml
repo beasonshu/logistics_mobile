@@ -89,7 +89,7 @@
                     android:id="@+id/bill_spotName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="提货点："
+                    android:text="起运地："
                     android:textColor="@color/gray" />
 
                 <TextView
@@ -138,7 +138,7 @@
                     android:id="@+id/bill_destName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="目的地："
+                    android:text="收货地："
                     android:textColor="@color/gray" />
 
                 <TextView
@@ -187,7 +187,7 @@
                     android:id="@+id/bill_uploadTime"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="调度下发时间："
+                    android:text="发车时间："
                     android:textColor="@color/gray" />
 
                 <TextView
@@ -208,7 +208,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="5dp"
-                    android:text="预计执行时间："
+                    android:text="预计到达时间："
                     android:textColor="@color/gray" />
 
                 <TextView

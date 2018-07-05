@@ -99,6 +99,7 @@ public class MybillActivity extends BaseActivity {
 		for (int i=0;i<20;i++){
 			MyBillBean myBillBean = new MyBillBean();
 			myBillBean.actCount = 10+i;
+			myBillBean.warehourse = "WWGwegweg"+i;
 			myBillBean.billID ="ABCWDWA"+i;
 			myBillBean.downloadBar= "0";
 			myBillBean.excuteStratTime ="2018-7-5";
