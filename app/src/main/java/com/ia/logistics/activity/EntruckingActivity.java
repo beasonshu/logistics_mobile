@@ -68,7 +68,7 @@ public class EntruckingActivity extends BaseActivity {
 
 	// 显示总毛重和净重
 	private void refreashCheckedWeight() {
-		new AsyncTask<Void, Void, Map<String, Number>>() {
+		/*new AsyncTask<Void, Void, Map<String, Number>>() {
 
 			@Override
 			protected Map<String, Number> doInBackground(Void... params) {
@@ -103,7 +103,7 @@ public class EntruckingActivity extends BaseActivity {
 								result.get("net_weight"),
 								result.get("checked_sum"), result.get("sum")));
 			}
-		}.execute();
+		}.execute();*/
 	}
 
 	@Override
@@ -133,7 +133,7 @@ public class EntruckingActivity extends BaseActivity {
 	 * 实捆包初始化
 	 */
 	private void dataInList() {
-		new AsyncTask<Void, Void, String>() {
+		/*new AsyncTask<Void, Void, String>() {
 
 			@Override
 			protected String doInBackground(Void... params) {
@@ -163,7 +163,7 @@ public class EntruckingActivity extends BaseActivity {
 				super.onPostExecute(result);
 			}
 
-		}.execute();
+		}.execute();*/
 	}
 
 	private void setOnclickListeners() {
@@ -440,7 +440,7 @@ public class EntruckingActivity extends BaseActivity {
 	}
 
 	private void initData() {
-		new AsyncTask<Void, Void, ArrayList<Map<String, String>>>() {
+		/*new AsyncTask<Void, Void, ArrayList<Map<String, String>>>() {
 
 			@Override
 			protected ArrayList<Map<String, String>> doInBackground(
@@ -521,14 +521,14 @@ public class EntruckingActivity extends BaseActivity {
 								.setVisibility(View.VISIBLE);
 						findViewById(R.id.entrucking_slidingDrawer)
 								.setVisibility(View.GONE);
-						/*
+						*//*
 						 * ((EditText) findViewById(R.id.en_imaginary_weight))
 						 * .setOnEditorActionListener(new
 						 * MyEditorActionListener()); ((EditText)
 						 * findViewById(R.id.en_imaginary_count))
 						 * .setOnEditorActionListener(new
 						 * MyEditorActionListener());
-						 */
+						 *//*
 						final EditText edi = (EditText) findViewById(R.id.en_imaginary_count);
 						edi.addTextChangedListener(new TextWatcher() {
 
@@ -536,13 +536,13 @@ public class EntruckingActivity extends BaseActivity {
 							public void onTextChanged(CharSequence s,
 													  int start, int before, int count) {
 								// TODO Auto-generated method stub
-								/*if (start > 1) {
+								*//*if (start > 1) {
 									int num = Integer.parseInt(s.toString());
 									if (num > 100) {
 										s = "100";
 									}
 									return;
-								}*/
+								}*//*
 							}
 
 							@Override
@@ -575,13 +575,13 @@ public class EntruckingActivity extends BaseActivity {
 							public void onTextChanged(CharSequence s,
 													  int start, int before, int count) {
 								// TODO Auto-generated method stub
-								/*if (start > 1) {
+								*//*if (start > 1) {
 									int num = (int) Float.parseFloat(s.toString());
 									if (num > 100) {
 										s = "100";
 									}
 									return;
-								}*/
+								}*//*
 							}
 
 							@Override
@@ -612,7 +612,7 @@ public class EntruckingActivity extends BaseActivity {
 				super.onPostExecute(result_bill);
 			}
 
-		}.execute();
+		}.execute();*/
 		if (!isImaginary) {
 			final ImageButton imageView = (ImageButton) findViewById(R.id.handle);
 			SlidingDrawer sd = (SlidingDrawer) findViewById(R.id.entrucking_slidingDrawer);
