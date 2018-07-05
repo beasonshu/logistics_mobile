@@ -12,9 +12,10 @@
 
         <RelativeLayout
             android:id="@+id/billTopbar"
+            android:padding="2dp"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="#f57e0a" >
+            android:background="#FFFFDCAA" >
 
             <Button
                 android:id="@+id/filterButton"
@@ -23,12 +24,12 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:background="#f57e0a"
+                android:background="@drawable/radiuslinearlayout_iteam_style"
                 android:text="筛选"
                 android:textColor="@android:color/white"
                 android:textSize="15sp" />
 
-            <TextView
+            <Button
                 android:id="@+id/mybill_homeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -36,7 +37,9 @@
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/filterButton"
                 android:text="主页"
-                android:background="#f57e0a" />
+                android:textSize="15sp"
+                android:textColor="@android:color/white"
+                android:background="@drawable/radiuslinearlayout_iteam_style" />
 
             <TextView
                 android:id="@+id/mybillTitle"
@@ -44,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="我 的 货"
+                android:text="订单"
                 android:textColor="#fff"
                 android:textSize="23sp" />
 
@@ -55,7 +58,9 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
-                android:background="@drawable/pull_to_refresh_tap_label" />
+                android:textSize="15sp"
+                android:text="扫描"
+                android:background="@drawable/radiuslinearlayout_iteam_style" />
 
             <Button
                 android:id="@+id/priorityButton"
@@ -64,7 +69,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
                 android:layout_toLeftOf="@+id/scanButton"
-                android:background="@drawable/btn_bg"
+                android:background="@drawable/radiuslinearlayout_iteam_style"
                 android:text="排序"
                 android:textColor="@android:color/white"
                 android:textSize="15sp" />

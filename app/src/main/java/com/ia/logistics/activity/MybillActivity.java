@@ -109,13 +109,13 @@ public class MybillActivity extends BaseActivity {
 	@Override
 	protected void onResume() {
 		super.onResume();
-		init(-1,null);
+		/*init(-1,null);
 		if (dataList==null||dataList.size()==0) {
 			if (mListView!=null) {
 				mListView.onRefreshStart();
 				loadBills();
 			}
-		}
+		}*/
 	}
 
 	private void loadBills() {
@@ -126,7 +126,7 @@ public class MybillActivity extends BaseActivity {
 			}
 			return;
 		}
-		new AsyncTask<Void, Void, String>() {
+		/*new AsyncTask<Void, Void, String>() {
 			protected String doInBackground(Void... params) {
 				return InterfaceDates.getInstance().inserBillInfo();
 			}
@@ -141,7 +141,7 @@ public class MybillActivity extends BaseActivity {
 				}
 			}
 
-		}.execute();
+		}.execute();*/
 	}
 
 	public class LoadPackByBill extends AsyncTask<Void, Void, String>{

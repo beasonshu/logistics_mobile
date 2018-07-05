@@ -93,6 +93,8 @@
         android:layout_height="wrap_content"
         android:layout_weight="7"
         android:baselineAligned="false"
+        android:layout_marginLeft="95dp"
+        android:layout_marginRight="95dp"
         android:orientation="vertical" >
 
         <LinearLayout
@@ -101,52 +103,79 @@
             android:gravity="center"
             android:orientation="horizontal" >
 
-            <ImageButton
+            <TextView
                 android:id="@+id/imageButtonmain_mybill"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:background="@drawable/home_mybill" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="订单"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/task"/>
 
-            <ImageButton
+            <TextView
                 android:id="@+id/imageButtonmain_sign"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="60dp"
-                android:background="@drawable/home_sign" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:text="签收"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/sign_arr"/>
 
-            <ImageButton
+            <TextView
                 android:id="@+id/imageButtonmain_schedule"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="60dp"
-                android:background="@drawable/home_schedule" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="日志"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/log_icon"/>
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="10dp"
+            android:layout_marginTop="20dp"
             android:gravity="center"
             android:orientation="horizontal" >
-
-            <ImageButton
+            <TextView
                 android:id="@+id/imageButtonmain_help"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:background="@drawable/home_help" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="帮助"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/help_icon"/>
 
-            <ImageButton
+            <TextView
                 android:id="@+id/imageButtonmain_phone"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="60dp"
-                android:background="@drawable/home_phone" />
-            <ImageButton
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="热线"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/phone_icon"/>
+            <TextView
                 android:id="@+id/imageButtonmain_setting"
-                android:layout_width="95dp"
-                android:layout_height="95dp"
-                android:layout_marginLeft="60dp"
-                android:background="@drawable/home_setting" />
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:textSize="14sp"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:text="设置"
+                android:textColor="@color/white"
+                android:drawableTop="@drawable/setting_icon"/>
+
+
         </LinearLayout>
     </LinearLayout>
 

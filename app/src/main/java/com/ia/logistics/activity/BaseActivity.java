@@ -9,7 +9,7 @@ import android.view.WindowManager;
 import android.widget.Button;
 
 public abstract class BaseActivity extends BaseComActivity{
-	protected  Button homeButton;
+	protected  View homeButton;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -23,7 +23,7 @@ public abstract class BaseActivity extends BaseComActivity{
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		super.onStart();
-		homeButton = (Button) getHomeViewId();
+		homeButton =  getHomeViewId();
 		if (homeButton!=null) {
 			homeButton.setOnClickListener(onClickListener);
 		}

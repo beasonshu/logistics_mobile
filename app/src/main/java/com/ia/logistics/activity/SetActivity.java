@@ -23,7 +23,6 @@ public class SetActivity extends BaseActivity {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.set);
 		findViewById(R.id.set_logout).setOnClickListener(new OnClickListener() {
@@ -33,34 +32,7 @@ public class SetActivity extends BaseActivity {
 				/*startActivity(new Intent(SetActivity.this,LoginActivity.class));
 				finish();*/
 				if (CommSet.checkNet(SetActivity.this)) {
-					new AsyncSendDataTask(SetActivity.this) {
-
-						@Override
-						protected void onPreExecute() {
-							// TODO Auto-generated method stub
-							findViewById(R.id.set_logout).setClickable(false);
-							super.onPreExecute();
-						}
-
-						@Override
-						protected String doInBackground(Object... params) {
-							// TODO Auto-generated method stub
-							return addUpFlow(CommSet.getAppUID(mContext));
-						}
-
-						@Override
-						protected void onPostExecute(String result) {
-							// TODO Auto-generated method stub
-							if (result.startsWith("2#")) {
-								getSharedPreferences("mybill", 0).edit().putString("come_to_cyc", "0").commit();
-								startActivity(new Intent(SetActivity.this,CyclometerActivity.class));
-								finish();
-								findViewById(R.id.set_logout).setClickable(true);
-							}
-							super.onPostExecute(result);
-						}
-
-					}.execute();
+					finish();
 				}else {
 					Toast.makeText(SetActivity.this, "连接网络失败", Toast.LENGTH_LONG).show();
 				}
@@ -72,46 +44,6 @@ public class SetActivity extends BaseActivity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				if (CommSet.checkNet(SetActivity.this)) {
-					new AsyncSendDataTask(SetActivity.this) {
-
-						@Override
-						protected void onPreExecute() {
-							// TODO Auto-generated method stub
-							findViewById(R.id.set_update).setClickable(false);
-							super.onPreExecute();
-						}
-
-						@Override
-						protected String doInBackground(Object... params) {
-							// TODO Auto-generated method stub
-							return CommSet.checkNewEdition(SetActivity.this);
-						}
-
-						@Override
-						protected void onPostExecute(String result) {
-							// TODO Auto-generated method stub
-							if (!result.startsWith("0#")) {
-								UpdateManager uManager = new UpdateManager(SetActivity.this, result);
-								uManager.checkUpdateInfo();
-							} else {
-								new AlertDialog.Builder(SetActivity.this)
-										.setTitle("版本更新")
-										.setIcon(R.drawable.trucs46)
-										.setMessage("你已经是最新版本!")
-										.setPositiveButton(
-												"确定",
-												new DialogInterface.OnClickListener() {
-													public void onClick(
-															DialogInterface dialog,
-															int which) {
-														dialog.dismiss();
-													}
-												}).show();
-							}
-							findViewById(R.id.set_update).setClickable(true);
-							super.onPostExecute(result);
-						}
-					}.execute();
 				}else {
 					Toast.makeText(SetActivity.this, "网络连接失败！", Toast.LENGTH_LONG).show();
 				}
