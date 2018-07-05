@@ -57,7 +57,7 @@ public class MainMenuActivity extends BaseComActivity {
 			Intent intent = null;
 			switch (v.getId()) {
 				case R.id.imageButtonmain_mybill:// 我的货
-					new AsyncSendDataTask(MainMenuActivity.this) {
+					/*new AsyncSendDataTask(MainMenuActivity.this) {
 
 						@Override
 						protected String doInBackground(Object... params) {
@@ -112,12 +112,14 @@ public class MainMenuActivity extends BaseComActivity {
 							}else {
 								intent = new Intent(MainMenuActivity.this,MybillActivity.class);
 							}
-							startActivity(intent);
-							finish();
+
 							super.onPostExecute(result);
 						}
 
-					}.execute();
+					}.execute();*/
+					intent = new Intent(MainMenuActivity.this,MybillActivity.class);
+					startActivity(intent);
+					finish();
 					break;
 				case R.id.imageButtonmain_sign:
 					intent = new Intent(MainMenuActivity.this,SignActivity.class);
