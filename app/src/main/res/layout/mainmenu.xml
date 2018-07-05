@@ -63,7 +63,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="皇甫姓名"
-                android:textColor="@color/black" >
+                android:textColor="@color/white" >
             </TextView>
 
             <TextView
@@ -73,7 +73,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="沪A 12345"
-                android:textColor="@color/black" >
+                android:textColor="@color/white" >
             </TextView>
 
             <TextView
@@ -83,7 +83,7 @@
                 android:layout_weight="1"
                 android:gravity="center"
                 android:text="JC8871233"
-                android:textColor="@color/black" >
+                android:textColor="@color/white" >
             </TextView>
         </LinearLayout>
     </LinearLayout>
