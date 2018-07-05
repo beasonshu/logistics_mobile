@@ -166,7 +166,7 @@ public class MybillActivity extends BaseActivity {
 			View view = layoutInflater.inflate(R.layout.priority_list, null);
 
 			// 创建一个PopuWidow对象
-			popupWindow = new PopupWindow(view, 200,  LinearLayout.LayoutParams.WRAP_CONTENT);
+			popupWindow = new PopupWindow(view, 400,  LinearLayout.LayoutParams.WRAP_CONTENT);
 
 			view.findViewById(R.id.priority_btn).setOnClickListener(new OnClickListener() {
 

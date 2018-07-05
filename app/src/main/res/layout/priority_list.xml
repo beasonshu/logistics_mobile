@@ -21,7 +21,7 @@
         android:id="@+id/priority_time_btn"
         style="@style/ListItem.SpinnerItemNormal"
         android:layout_below="@+id/priority_divider"
-        android:text="预计执行时间"
+        android:text="发车时间"
         android:textColor="@drawable/spinner_item_text_color"
         android:textSize="18.0dip"
         android:textStyle="bold" />
