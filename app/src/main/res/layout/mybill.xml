@@ -5,7 +5,6 @@
     android:layout_height="fill_parent" >
 
     <LinearLayout
-        android:id="@+id/relativeLayout1"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="@color/white"
@@ -15,7 +14,7 @@
             android:id="@+id/billTopbar"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/rail" >
+            android:background="#f57e0a" >
 
             <Button
                 android:id="@+id/filterButton"
@@ -24,19 +23,20 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
-                android:background="@drawable/btn_bg"
+                android:background="#f57e0a"
                 android:text="筛选"
                 android:textColor="@android:color/white"
                 android:textSize="15sp" />
 
-            <Button
+            <TextView
                 android:id="@+id/mybill_homeButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/filterButton"
-                android:background="@drawable/home" />
+                android:text="主页"
+                android:background="#f57e0a" />
 
             <TextView
                 android:id="@+id/mybillTitle"
