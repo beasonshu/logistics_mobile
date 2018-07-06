@@ -133,7 +133,7 @@ public class SignAdapter extends BaseAdapter {
 		@Override
 		public void onClick(View v) {
 			// TODO Auto-generated method stub
-			new AsyncSendDataTask(context) {
+			/*new AsyncSendDataTask(context) {
 				@Override
 				protected String doInBackground(Object... arg0) {
 					// TODO Auto-generated method stub
@@ -160,7 +160,7 @@ public class SignAdapter extends BaseAdapter {
 					}
 					super.onPostExecute(result);
 				}
-			}.execute();
+			}.execute();*/
 		}
 
 	}
@@ -185,7 +185,7 @@ public class SignAdapter extends BaseAdapter {
 			editor.commit();
 
 			if ("10".equals(datalist.get(index).getQszt())) {
-				new AsyncSendDataTask(context) {
+				/*new AsyncSendDataTask(context) {
 					@Override
 					protected String doInBackground(Object... arg0) {
 						// TODO Auto-generated method stub
@@ -216,7 +216,7 @@ public class SignAdapter extends BaseAdapter {
 						}
 						super.onPostExecute(result);
 					}
-				}.execute();
+				}.execute();*/
 			} else {
 				Toast.makeText(context, "你已经签收过，不能重复签收!",
 						Toast.LENGTH_SHORT).show();
