@@ -38,42 +38,23 @@ public class SignActivity extends BaseActivity {
 	 */
 	public void init() {
 		// TODO Auto-generated method stub
-
-		if (CommSet.checkNet(SignActivity.this)) {
-			new AsyncSendDataTask(SignActivity.this) {
-				List<SignsModel> datalist;
-				@Override
-				protected String doInBackground(Object... params) {
-					// TODO Auto-generated method stub
-					datalist = InterfaceDates.getInstance().receiveSignsId(
-							mContext);
-					if (datalist != null && !datalist.isEmpty()
-							&& !datalist.get(0).getFhbz().startsWith("0#")) {
-						return "";
-					}
-					return "0#";
-				}
-
-				@Override
-				protected void onPostExecute(String result) {
-					// TODO Auto-generated method stub
-					super.onPostExecute(result);
-					if (result.startsWith("0#")) {
-						datalist = new ArrayList<SignsModel>();
-						SharedPreferences sp=getSharedPreferences("mybill", MODE_WORLD_WRITEABLE);
-						sp.edit().clear();
-						Toast.makeText(mContext, "信息为空！", Toast.LENGTH_SHORT).show();
-					}
-					SignAdapter signadapter = new SignAdapter(mContext, datalist);
-					((ListView) findViewById(R.id.sign_listview)).setAdapter(signadapter);
-				}
-
-			}.execute();
-		} else {
-			Toast.makeText(SignActivity.this, "没有网络！", Toast.LENGTH_SHORT)
-					.show();
+		List<SignsModel> datalist = new ArrayList<SignsModel>();
+		for (int i=0;i<10;i++){
+			SignsModel model = new SignsModel();
+			model.setCch("cch");
+			model.setCtdm("ctdm"+i);
+			model.setFhbz("fhbz"+i);
+			model.setJs("js"+i);
+			model.setMddmc("2018-06-01");
+			model.setQsbz("qsbz");
+			model.setQsdid("qs");
+			model.setQssj("qssj");
+			model.setQszt("qszt");
+			model.setMz("mz");
+			datalist.add(model);
 		}
-
+		SignAdapter signadapter = new SignAdapter(this, datalist);
+		((ListView) findViewById(R.id.sign_listview)).setAdapter(signadapter);
 	}
 
 	@Override
