@@ -56,20 +56,20 @@ public class SetActivity extends BaseActivity {
 	 *
 	 * @param UID
 	 */
-	private String addUpFlow(int UID) {
-		//统计总流量
-		SharedPreferences preferences = getSharedPreferences("flow", 0);
-		long current_used_app_flow = preferences.getLong("shutdown_app_flow",0) + CommSet.getCurrentAppBytes(UID) - preferences.getLong("submit_app_flow", 0);
-		String result = InterfaceDates.getInstance().sendFlowInfo(((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getSimSerialNumber(),
-				current_used_app_flow/1024, preferences.getString("used_sum_flow", "0"), TeleUtils.getDeviceId(this));
-		if (result.startsWith("2#")) {
-			Editor editor = preferences.edit();
-			editor.putLong("submit_app_flow", CommSet.getCurrentAppBytes(UID));
-			editor.putLong("shutdown_app_flow", 0);
-			editor.commit();
-		}
-		return result;
-	}
+//	private String addUpFlow(int UID) {
+//		//统计总流量
+//		SharedPreferences preferences = getSharedPreferences("flow", 0);
+//		long current_used_app_flow = preferences.getLong("shutdown_app_flow",0) + CommSet.getCurrentAppBytes(UID) - preferences.getLong("submit_app_flow", 0);
+//		String result = InterfaceDates.getInstance().sendFlowInfo(((TelephonyManager) getSystemService(TELEPHONY_SERVICE)).getSimSerialNumber(),
+//				current_used_app_flow/1024, preferences.getString("used_sum_flow", 塞t"0"), TeleUtils.getDeviceId(this));
+//		if (result.startsWith("2#")) {
+//			Editor editor = preferences.edit();
+//			editor.putLong("submit_app_flow", CommSet.getCurrentAppBytes(UID));
+//			editor.putLong("shutdown_app_flow", 0);
+//			editor.commit();
+//		}
+//		return result;
+//	}
 
 	@Override
 	public boolean onKeyDown(int keyCode, KeyEvent event) {

@@ -164,6 +164,9 @@ public class EntruckingActivity extends BaseActivity {
 			}
 
 		}.execute();*/
+		mEntruckingAdapter = new EntruckingAdapter(
+				EntruckingActivity.this, mHandler, mList, bill_id);
+		enListView.setAdapter(mEntruckingAdapter);
 	}
 
 	private void setOnclickListeners() {
