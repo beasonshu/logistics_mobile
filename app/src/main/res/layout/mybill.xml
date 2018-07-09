@@ -47,7 +47,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="订单"
+                android:text="运输订单"
                 android:textColor="#fff"
                 android:textSize="23sp" />
 
@@ -58,6 +58,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="10dp"
+                android:visibility="gone"
                 android:background="@drawable/radiuslinearlayout_iteam_style"
                 android:text="扫描"
                 android:textSize="15sp" />
