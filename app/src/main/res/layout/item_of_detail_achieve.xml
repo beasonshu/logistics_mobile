@@ -149,7 +149,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/textView1"
-                android:text="提货点：硅钢延伸库硅钢延伸库C88"
+                android:text="起运地：硅钢延伸库硅钢延伸库C88"
                 android:textColor="@color/gray"
                 android:textSize="16sp" />
 
@@ -169,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_below="@+id/textViewioda_origin"
-                android:text="目的地：铁路库 D库"
+                android:text="收货地：铁路库 D库"
                 android:textColor="@color/gray"
                 android:textSize="16sp" />
         </RelativeLayout>

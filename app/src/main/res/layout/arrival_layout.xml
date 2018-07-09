@@ -100,7 +100,7 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="50dp"
                 android:layout_toRightOf="@+id/arrival_carCch"
-                android:text="新目的地："
+                android:text="新收货地："
                 android:textColor="@color/black" />
 
             <TextView
@@ -112,7 +112,7 @@
                 android:layout_toLeftOf="@+id/buttonl_acd"
                 android:layout_toRightOf="@+id/textView_destination"
                 android:maxLines="2"
-                android:text="宝钢运输公司六号"
+                android:text="运输公司六号"
                 android:textColor="@color/black" />
 
             <Button
@@ -126,7 +126,7 @@
                 android:layout_marginRight="10px"
                 android:background="@drawable/btn_change_target"
                 android:padding="5dp"
-                android:text="修改目的地"
+                android:text="修改收货地"
                 android:textColor="@color/black" />
         </RelativeLayout>
 
@@ -189,7 +189,7 @@
                 android:layout_height="wrap_content"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
-                android:text="选择目的地"
+                android:text="选择收货地"
                 android:textColor="@color/white"
                 android:textSize="23sp" >
             </TextView>
@@ -236,7 +236,7 @@
                 android:layout_alignParentRight="true"
                 android:layout_centerVertical="true"
                 android:layout_marginRight="250dp"
-                android:text="新目的地"
+                android:text="新收货地"
                 android:textColor="#000" />
 
             <TextView

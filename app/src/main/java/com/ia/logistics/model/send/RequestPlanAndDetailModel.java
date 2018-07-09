@@ -25,7 +25,7 @@ public class RequestPlanAndDetailModel {
 
 	private String px;//排序
 
-	private String thdmc;//提货点名称
+	private String thdmc;//起运地名称
 
 	private String ckzyjh;//出库作业计划号
 

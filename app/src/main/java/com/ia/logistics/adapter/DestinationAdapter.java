@@ -61,7 +61,7 @@ public class DestinationAdapter extends BaseAdapter{
 
 	//初始化
 	public void init(BillDestSearchModel search) {
-//	    List resList = MessageService.receiveAddressList(search);//获得目的地变更后的列表
+//	    List resList = MessageService.receiveAddressList(search);//获得收货地变更后的列表
 //	    if(resList != null){
 //	    	list = resList;
 //	    }

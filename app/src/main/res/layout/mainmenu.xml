@@ -37,7 +37,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="欢迎进入宝钢股份车载移动终端系统"
+                android:text="欢迎进入股份车载移动终端系统"
                 android:textColor="@color/black"
                 android:textSize="35sp"
                 android:textStyle="bold" >

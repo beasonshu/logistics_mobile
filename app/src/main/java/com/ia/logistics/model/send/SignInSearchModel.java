@@ -23,11 +23,11 @@ public class SignInSearchModel {
 	 */
 	private String gcdm;
 	/**
-	 * 提货点代码
+	 * 起运地代码
 	 */
 	private String thddm;
 	/**
-	 * 提货点名称
+	 * 起运地名称
 	 */
 	private String thdmc;
 	/**

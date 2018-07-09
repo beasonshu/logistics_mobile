@@ -1,7 +1,7 @@
 package com.ia.logistics.model.receive;
 
 /**
- * 接收目的地变更列表
+ * 接收收货地变更列表
  * @author wuyang
  *
  */
@@ -10,12 +10,12 @@ public class BillDestModel extends MarkerModel{
 	public static final String Node_Name = "dest";
 
 	/**
-	 * 目的地代码
+	 * 收货地代码
 	 */
 	private String mdddm;
 
 	/**
-	 * 目的地名称
+	 * 收货地名称
 	 */
 	private String mddmc;
 

@@ -555,7 +555,7 @@ public class InterfaceDates {
 	}
 
 	/**
-	 * 更改目的地
+	 * 更改收货地
 	 *
 	 * @return
 	 */
@@ -785,8 +785,8 @@ public class InterfaceDates {
 	/**
 	 *
 	 * @param arg
-	 *            数组 index: 0:context 1:操作标志 10 ：签到 20: 发车，取消签到30: 取得签到点（提货点）
-	 *            2：提货点代码 3：提货点名称
+	 *            数组 index: 0:context 1:操作标志 10 ：签到 20: 发车，取消签到30: 取得签到点（起运地）
+	 *            2：起运地代码 3：起运地名称
 	 */
 	public String getSignForArrivalInfo(Object... arg) {
 		SharedPreferences preferences = ((Context) arg[0])

@@ -14,7 +14,7 @@ public class SignDetilModel extends MarkerModel implements Serializable {
 	private String mz;// 毛重
 	private String jz;// 净重
 	private String pzmc;// 品种名称
-	private String thdmc;// 提货点名称
+	private String thdmc;// 起运地名称
 
 	public String getThdmc() {
 		return thdmc;

@@ -1,7 +1,7 @@
 package com.ia.logistics.model.send;
 
 /**
- * 接收提单变更目的地
+ * 接收提单变更收货地
  * @author wuyang
  *
  */
@@ -15,20 +15,20 @@ public class BillDestSearchModel {
 	private String cysdm;
 
 	/**
-	 * 目的地代码
+	 * 收货地代码
 	 */
 	private String mdddm;
 
 	/**
-	 * 目的地名称
+	 * 收货地名称
 	 */
 	private String mddmc;
 	/**
-	 * 提单目的地名称
+	 * 提单收货地名称
 	 */
 	private String tdmddmc;
 	/**
-	 * 提单目的地代码
+	 * 提单收货地代码
 	 */
 	private String tdmdddm;
 

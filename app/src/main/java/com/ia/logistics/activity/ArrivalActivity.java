@@ -212,14 +212,14 @@ public class ArrivalActivity extends BaseActivity {
 				if (isSameArrivalName(arrivalAdapter.getSelectedItemIndexes().clone())||newAddress_name!=null) {
 					comfireDialog();
 				}else {
-					Toast.makeText(ArrivalActivity.this, "本次任务有多个到货地点,请修改目的地！",
+					Toast.makeText(ArrivalActivity.this, "本次任务有多个到货地点,请修改收货地！",
 							Toast.LENGTH_SHORT).show();
 				}
 			}
 
 		});
 
-		// 目的地变更
+		// 收货地变更
 		arrival_dest_btn.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -252,7 +252,7 @@ public class ArrivalActivity extends BaseActivity {
 							animator.showNext();
 						}
 						if (result.startsWith("0#")) {
-							Toast.makeText(mContext, "没有目的地，请联系调度维护目的地！",
+							Toast.makeText(mContext, "没有收货地，请联系调度维护收货地！",
 									Toast.LENGTH_SHORT).show();
 						}
 						super.onPostExecute(result);
@@ -261,7 +261,7 @@ public class ArrivalActivity extends BaseActivity {
 				}.execute(CommSet.checkNet(ArrivalActivity.this));
 			}
 		});
-		// 更改目的地按钮事件
+		// 更改收货地按钮事件
 
 		// 返回按钮
 		destion_back_btn.setOnClickListener(new OnClickListener() {
@@ -277,7 +277,7 @@ public class ArrivalActivity extends BaseActivity {
 				arrival_weight.setText("");
 			}
 		});
-		// 修改目的地确认按钮
+		// 修改收货地确认按钮
 		destion_confirm_btn.setOnClickListener(new OnClickListener() {
 
 			@Override
@@ -290,7 +290,7 @@ public class ArrivalActivity extends BaseActivity {
 					arrival_dest_txt.setText(newAddress_name + "("
 							+ newAddress_code + ")");
 				}else {
-					Toast.makeText(ArrivalActivity.this, "请选择目的地", Toast.LENGTH_SHORT).show();
+					Toast.makeText(ArrivalActivity.this, "请选择收货地", Toast.LENGTH_SHORT).show();
 				}
 			}
 		});
@@ -502,7 +502,7 @@ public class ArrivalActivity extends BaseActivity {
 	}
 
 	/**
-	 * 判断所有捆包目的地是否只有一个
+	 * 判断所有捆包收货地是否只有一个
 	 *
 	 */
 	public boolean isSameArrivalName(int[] arry) {
@@ -557,9 +557,9 @@ public class ArrivalActivity extends BaseActivity {
 				// TODO Auto-generated method stub
 				newAddress_name = destionList.get(position).getMddmc();
 				newAddress_code = destionList.get(position).getMdddm();
-				CommSet.d("baosight","新的目的地代码："+newAddress_code);
+				CommSet.d("baosight","新的收货地代码："+newAddress_code);
 				dest_text.setText(newAddress_name + "(" + newAddress_code + ")");
-				CommSet.d("baosight","新目的地" + newAddress_name + ":"+ newAddress_code);
+				CommSet.d("baosight","新收货地" + newAddress_name + ":"+ newAddress_code);
 			}
 		});
 	}

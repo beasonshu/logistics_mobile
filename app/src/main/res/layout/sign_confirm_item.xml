@@ -79,7 +79,7 @@
                     android:id="@+id/sign_spotName"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="提货点："
+                    android:text="起运地："
                     android:textColor="@color/gray"
                     android:textSize="14sp" />
 

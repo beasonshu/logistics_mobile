@@ -262,7 +262,7 @@ public class MessageService {
 
 	/**
 	 *
-	 * 接收(筛选)提单变更目的地列表
+	 * 接收(筛选)提单变更收货地列表
 	 * @throws Exception
 	 */
 	public static List<BillDestModel> receiveAddressList(

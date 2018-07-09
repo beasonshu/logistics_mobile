@@ -14,7 +14,7 @@ public class SignsModel extends MarkerModel {
 	private String qssj;//签收时间
 	private String qsbz;//签收备注
 	private String qszt;//签收状态
-	private String mddmc;//目的地名称
+	private String mddmc;//收货地名称
 	private String mz;//毛重
 	private String jz;//净重
 	private String js;//件数

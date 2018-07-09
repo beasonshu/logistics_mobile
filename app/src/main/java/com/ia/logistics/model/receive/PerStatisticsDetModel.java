@@ -20,19 +20,19 @@ public class PerStatisticsDetModel {
 	 */
 	private String tdh;
 	/**
-	 * 提货点代码
+	 * 起运地代码
 	 */
 	private String thddm;
 	/**
-	 * 提货点名称
+	 * 起运地名称
 	 */
 	private String thdmc;
 	/**
-	 * 目的地代码
+	 * 收货地代码
 	 */
 	private String mdddm;
 	/**
-	 * 目的地名称
+	 * 收货地名称
 	 */
 	private String mddmc;
 	/**

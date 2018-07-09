@@ -97,8 +97,8 @@ public class DetailOfAchieveAdapter extends BaseAdapter{
 		}else{
 			holder.textViewZzdyh.setText((position+1) + "." + ckzyjhh);
 		}
-		holder.textVieworigin.setText("提货点:"+origin);
-		holder.textViewdest.setText("目的地:"+dest);
+		holder.textVieworigin.setText("起运地:"+origin);
+		holder.textViewdest.setText("收货地:"+dest);
 		holder.textViewgw.setText(gw+"吨");
 		holder.textViewnw.setText(nw+"吨");
 		holder.textViewtime.setText(time);

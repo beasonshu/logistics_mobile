@@ -65,10 +65,10 @@ public class ADVT_DataBase{
 //				"gross_weight",			    //毛重			
 //				"act_count",			    //件数		
 				"warehouse_num",			//出库作业计划号		
-				"dest_spot_num",		    //目的地代码			
-				"dest_spot_name",	        //目的地名称			
-				"landing_spot_num",		    //提货点代码			
-				"landing_spot_name",	    //提货点名称			
+				"dest_spot_num",		    //收货地代码
+				"dest_spot_name",	        //收货地名称
+				"landing_spot_num",		    //起运地代码
+				"landing_spot_name",	    //起运地名称
 //				"excute_time",		        //预计执行时间			
 				"control_status",		    //调度计划状态			
 				"urgency_degree",	        //提单紧急程度			
@@ -103,10 +103,10 @@ public class ADVT_DataBase{
 				"order_num",				//合同号			
 				"bill_id",				    //运输订单
 				"product_name",			    //品种名称	
-				"landing_spot_num",		    //提货点代码			
-				"landing_spot_name",	    //提货点名称		
-				"dest_spot_num",		    //目的地代码			
-				"dest_spot_name",	        //目的地名称	
+				"landing_spot_num",		    //起运地代码
+				"landing_spot_name",	    //起运地名称
+				"dest_spot_num",		    //收货地代码
+				"dest_spot_name",	        //收货地名称
 				"local_status",		       	//本地材料状态			
 				"remote_status",	     	//服务端材料状态	
 				"bill_type"	     		//材料类型
