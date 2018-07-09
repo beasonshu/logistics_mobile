@@ -5,6 +5,7 @@ import java.lang.reflect.Method;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.Manifest;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.AlertDialog.Builder;
@@ -50,6 +51,7 @@ public class LoginActivity extends AppCompatActivity {
 	/** Called when the activity is first created. */
     public static final int PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE = 0x13;
     public static final int PERMISSIONS_REQUEST_READ_SMS = 0x234;
+	public static final int PERMISSIONS_REQUEST_CALL_PHONE = 0x11;
 	private EditText login_id, login_pwd;
 	private Button login_btn;
 	private String username, pwd;
@@ -94,6 +96,14 @@ public class LoginActivity extends AppCompatActivity {
                 }, PERMISSIONS_REQUEST_WRITE_EXTERNAL_STORAGE);
                 return;
             }
+			if (ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE)
+					!= PackageManager.PERMISSION_GRANTED) {
+				//申请WRITE_EXTERNAL_STORAGE权限
+				this.requestPermissions(new String[]{
+						Manifest.permission.CALL_PHONE
+				}, PERMISSIONS_REQUEST_CALL_PHONE);
+				return;
+			}
         }
     }
 

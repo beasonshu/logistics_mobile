@@ -1,10 +1,13 @@
 package com.ia.logistics.activity;
 
+import android.Manifest;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.support.v4.content.ContextCompat;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
@@ -21,6 +24,8 @@ import com.ia.logistics.comm.Constant;
 
 public class MainMenuActivity extends BaseComActivity {
 	/** Called when the activity is first created. */
+
+
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -147,9 +152,8 @@ public class MainMenuActivity extends BaseComActivity {
 							.setPositiveButton("确定",new DialogInterface.OnClickListener() {
 								@Override
 								public void onClick(DialogInterface dialog, int which) {
-									// TODO Auto-generated method stub
 									Intent phoneIntent = new Intent("android.intent.action.CALL"
-											, Uri.parse("tel:8008200818"));
+											, Uri.parse("tel:400123123"));
 									startActivity(phoneIntent);
 								}
 							})
