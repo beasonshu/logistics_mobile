@@ -72,7 +72,7 @@
                 android:id="@+id/textView2"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="制造单元提单号："
+                android:text="制造单元运输订单："
                 android:textColor="@color/black"
                 android:textSize="15sp" >
             </TextView>
@@ -82,7 +82,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:focusableInTouchMode="false"
-                android:hint="请输入提单号"
+                android:hint="请输入运输订单"
                 android:textSize="15sp"
                 >
             </EditText>
