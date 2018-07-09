@@ -139,7 +139,7 @@ public class Constant{
 		public static final int TASK_DELETE_PACKAGE= 3;
 
 		/**
-		 * 删除提单号
+		 * 删除运输订单
 		 */
 		public static final int TASK_DELETE_BILL=7;
 

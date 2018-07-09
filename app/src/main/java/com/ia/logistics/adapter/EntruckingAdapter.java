@@ -126,7 +126,7 @@ public class EntruckingAdapter extends BaseAdapter {
 		} else {
 			holder = (ViewHolder) convertView.getTag();
 		}
-		// 从提单页面传来的提单号
+		// 从提单页面传来的运输订单
 		holder.en_packageID.setText(dataList.get(position).get("package_id"));
 		holder.en_contractID.setText(dataList.get(position).get("order_num"));
 		holder.en_grossWeight.setText(dataList.get(position).get("gross_weight"));

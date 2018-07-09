@@ -70,7 +70,7 @@ public class ScanAdapter extends BaseAdapter {
 			viewholder = (ViewHolder) convertView.getTag();
 		}
 		viewholder.scan_num.setText("材料号："+MyApplications.getInstance().getList().get(position).get("package_id"));
-		viewholder.scan_bill.setText("提单号："+MyApplications.getInstance().getList().get(position).get("bill_id"));
+		viewholder.scan_bill.setText("运输订单："+MyApplications.getInstance().getList().get(position).get("bill_id"));
 		viewholder.dele_bt.setOnClickListener(new OnClickListener() {
 
 			@Override

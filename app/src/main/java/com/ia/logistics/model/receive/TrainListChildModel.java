@@ -16,7 +16,7 @@ public class TrainListChildModel {
 	 */
 	private String hth;
 	/**
-	 * 提单号
+	 * 运输订单
 	 */
 	private String tdh;
 

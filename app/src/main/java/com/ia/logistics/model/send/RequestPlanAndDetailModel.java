@@ -13,7 +13,7 @@ public class RequestPlanAndDetailModel {
 
 	private String myts;// 每页条数
 
-	private String tdh;// 提单号
+	private String tdh;// 运输订单
 
 	private String flag;// 下载调度计划或捆包 “10” 调度计划；“20” 材料明细，Bill_id必要条件
 
@@ -140,6 +140,6 @@ public class RequestPlanAndDetailModel {
 }
 
 /*
- * DRI_U_CODE 司机U代码 Off_set 分页偏移量 Page_size 每页条数 Bill_id 提单号 Flag 下载调度计划或捆包 “10”
+ * DRI_U_CODE 司机U代码 Off_set 分页偏移量 Page_size 每页条数 Bill_id 运输订单 Flag 下载调度计划或捆包 “10”
  * 调度计划；“20” 捆包，Bill_id必要条件 Status 状态 “00” 未执行；“10” 执行中；“20”执行完毕
  */

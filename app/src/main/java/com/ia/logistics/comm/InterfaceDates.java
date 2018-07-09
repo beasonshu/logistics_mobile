@@ -304,7 +304,7 @@ public class InterfaceDates {
 	}
 
 	/**
-	 * 删除提单号
+	 * 删除运输订单
 	 */
 	public String delBillId(Map<String, String> delMap,Context context){
 		RequestPlanAndDetailModel planModel=new RequestPlanAndDetailModel();

@@ -216,7 +216,7 @@ public class MessageService {
 	}*/
 
 	/**
-	 * 删除提单号
+	 * 删除运输订单
 	 */
 	public static List<DisPatchPlanLsitModel> delBill(RequestPlanAndDetailModel detailmodle,Context context)
 			throws Exception{

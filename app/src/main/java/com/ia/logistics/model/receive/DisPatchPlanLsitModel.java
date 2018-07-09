@@ -13,7 +13,7 @@ public class DisPatchPlanLsitModel {
 	 */
 	private String xfsj;
 	/**
-	 * 提单号
+	 * 运输订单
 	 */
 	private String tdh;
 	/**

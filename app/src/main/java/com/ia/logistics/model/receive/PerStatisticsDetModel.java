@@ -16,7 +16,7 @@ public class PerStatisticsDetModel {
 	 */
 	private String xfsj;
 	/**
-	 * 提单号
+	 * 运输订单
 	 */
 	private String tdh;
 	/**

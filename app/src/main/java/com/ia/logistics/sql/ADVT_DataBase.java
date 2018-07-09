@@ -60,7 +60,7 @@ public class ADVT_DataBase{
 		//任务主表字段
 		String[] BILL_FILEDS = {
 				"control_id",		        //调度计划号			
-				"bill_id",				    //提单号			
+				"bill_id",				    //运输订单
 //				"net_weight",			    //净重			
 //				"gross_weight",			    //毛重			
 //				"act_count",			    //件数		
@@ -101,7 +101,7 @@ public class ADVT_DataBase{
 				"control_id",		        //调度计划号	
 				"package_id",		        //材料号			
 				"order_num",				//合同号			
-				"bill_id",				    //提单号			
+				"bill_id",				    //运输订单
 				"product_name",			    //品种名称	
 				"landing_spot_num",		    //提货点代码			
 				"landing_spot_name",	    //提货点名称		

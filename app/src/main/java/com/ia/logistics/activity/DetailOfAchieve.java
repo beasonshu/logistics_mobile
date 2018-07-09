@@ -94,7 +94,7 @@ public class DetailOfAchieve extends BaseActivity {
 				editor.putInt("type", 1);
 				editor.commit();
 				CommSet.d("baosight", "当前位置。。。" + position);
-				CommSet.d("baosight", "提单号。。。"
+				CommSet.d("baosight", "运输订单。。。"
 						+ detailOfAchieveAdapter.list.get(position).getTdh());
 				mBundle.putString("tdh",
 						detailOfAchieveAdapter.list.get(position).getTdh());

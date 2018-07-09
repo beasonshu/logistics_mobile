@@ -474,7 +474,7 @@ public class MybillActivity extends BaseActivity {
 			public DelItemOnclickListener(int position) {
 				// TODO Auto-generated constructor stub
 				index = position;
-				builder.setMessage("确认撤销提单号吗？");
+				builder.setMessage("确认撤销运输订单吗？");
 				builder.setTitle("撤销提示");
 				builder.setPositiveButton("确认",
 						new DialogInterface.OnClickListener() {

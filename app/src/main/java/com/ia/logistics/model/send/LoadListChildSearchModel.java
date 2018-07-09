@@ -10,7 +10,7 @@ public class LoadListChildSearchModel {
 	public static final String Node_Name = "bill";
 
 	/**
-	 * 提单号
+	 * 运输订单
 	 */
 	private String tdh;
 
