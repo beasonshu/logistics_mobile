@@ -231,12 +231,11 @@
         android:background="@drawable/detail" >
     </ImageView>
 
-    <Button
+    <ImageView
         android:id="@+id/sign_parent_barcode"
         android:layout_toLeftOf="@+id/imageViewioda_detail_sign"
         android:layout_centerInParent="true"
         android:layout_marginRight="40dp"
-        android:background="@drawable/bar_code"
         android:layout_width="50dp"
         android:layout_height="50dp" />
 

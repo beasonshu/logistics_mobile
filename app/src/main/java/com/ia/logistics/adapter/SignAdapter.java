@@ -47,7 +47,7 @@ public class SignAdapter extends BaseAdapter {
 				sign_parent_grossWeight,sign_parent_netWeight, sign_parent_car_num,
 				sign_parent_product_count,sign_parent_signtime, sign_parent_signtips;
 		ImageView sign_detail,sign_parent_signstatu;
-		Button bar_code;
+		View bar_code;
 	}
 
 	@Override
@@ -97,7 +97,7 @@ public class SignAdapter extends BaseAdapter {
 					.findViewById(R.id.sign_parent_signtips);
 			holder.sign_detail = (ImageView) convertView
 					.findViewById(R.id.imageViewioda_detail_sign);
-			holder.bar_code = (Button) convertView.findViewById(R.id.sign_parent_barcode);
+			holder.bar_code =  convertView.findViewById(R.id.sign_parent_barcode);
 			convertView.setTag(holder);
 		} else {
 			holder = (ViewHolder) convertView.getTag();
