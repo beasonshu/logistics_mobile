@@ -1,9 +1,5 @@
 package com.ia.logistics.adapter;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-
 import android.content.Context;
 import android.os.Handler;
 import android.view.LayoutInflater;
@@ -17,19 +13,24 @@ import android.widget.TextView;
 
 import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.CommSet;
+import com.ia.logistics.comm.Constant;
+import com.ia.logistics.model.PackBean;
 import com.ia.logistics.sql.ADVT_DBHelper;
 import com.ia.logistics.sql.SQLTransaction;
-import com.ia.logistics.comm.Constant;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 public class EntruckingAdapter extends BaseAdapter {
 	private LayoutInflater mInflater;
-	private List<Map<String, String>> dataList;
+	private List<PackBean> dataList;
 	private int layoutID;
 	private Handler mHandler;
 	private Context context;
 	private boolean[] itemStatus;
 	public EntruckingAdapter(Context mContext, Handler mHandler,
-							 List<Map<String, String>> list, String biil) {
+							 List<PackBean> list, String biil) {
 		// TODO Auto-generated constructor stub
 		this.context = mContext;
 		this.mHandler = mHandler;
@@ -39,7 +40,7 @@ public class EntruckingAdapter extends BaseAdapter {
 		mInflater = LayoutInflater.from(context);
 	}
 
-	public void setDataList(List<Map<String, String>>  list) {
+	public void setDataList(List<PackBean>  list) {
 		this.dataList = list;
 	}
 
@@ -83,7 +84,7 @@ public class EntruckingAdapter extends BaseAdapter {
 		CheckBox select;
 	}
 
-	public List<Map<String, String>> getDataList() {
+	public List<PackBean> getDataList() {
 		return dataList;
 	}
 
@@ -127,11 +128,11 @@ public class EntruckingAdapter extends BaseAdapter {
 			holder = (ViewHolder) convertView.getTag();
 		}
 		// 从提单页面传来的运输订单
-		holder.en_packageID.setText(dataList.get(position).get("package_id"));
-		holder.en_contractID.setText(dataList.get(position).get("order_num"));
-		holder.en_grossWeight.setText(dataList.get(position).get("gross_weight"));
-		holder.en_netWeight.setText(dataList.get(position).get("net_weight"));
-		holder.en_productType.setText(dataList.get(position).get("product_name"));
+		holder.en_packageID.setText(dataList.get(position).packageId);
+		holder.en_contractID.setText(dataList.get(position).orderNum);
+		holder.en_grossWeight.setText(dataList.get(position).grossWeight);
+		holder.en_netWeight.setText(dataList.get(position).netWeight);
+		holder.en_productType.setText(dataList.get(position).productName);
 		holder.select.setOnCheckedChangeListener(new MyCheckBoxChangedListener(position));
 		if (itemStatus[position] == true) {
 			holder.select.setChecked(true);
@@ -161,24 +162,24 @@ public class EntruckingAdapter extends BaseAdapter {
 
 	}
 	public boolean updateEntruckingInfo(boolean isLocal) {
-		int[] temp = getSelectedItemIndexes().clone();
+		/*int[] temp = getSelectedItemIndexes().clone();
 		ADVT_DBHelper.getAdvtDatabase().beginTransaction();
 		for (int i = 0; i < temp.length; i++) {
-			SQLTransaction.getInstance().updatePackState(dataList.get(temp[i]).get("package_id"), Constant.PackageState.PACKAGE_UPLOADED, Constant.PackageState.PACKAGE_UNEXCUTE, isLocal);
+			SQLTransaction.getInstance().updatePackState(dataList.get(temp[i]).packageId, Constant.PackageState.PACKAGE_UPLOADED, Constant.PackageState.PACKAGE_UNEXCUTE, isLocal);
 			if (i == (temp.length-1)) {
 				ADVT_DBHelper.getAdvtDatabase().setTransactionSuccessful();
 				ADVT_DBHelper.getAdvtDatabase().endTransaction();
 				return true;
 			}
 		}
-		ADVT_DBHelper.getAdvtDatabase().endTransaction();
+		ADVT_DBHelper.getAdvtDatabase().endTransaction();*/
 		return false;
 	}
 	/**
 	 * 选中的材料号list
 	 * @return
 	 */
-	public List<Map<String, String>> getSelectedPK() {
+	/*public List<PackBean> getSelectedPK() {
 		List<Map<String, String>> resultList = new ArrayList<Map<String,String>>();
 		int[] temp = getSelectedItemIndexes().clone();
 		for (int i = 0; i < temp.length; i++) {
@@ -186,6 +187,6 @@ public class EntruckingAdapter extends BaseAdapter {
 		}
 		return resultList;
 
-	}
+	}*/
 
 }

@@ -41,6 +41,7 @@ import com.ia.logistics.comm.InterfaceDates;
 import com.ia.logistics.comm.MyDialogOnKeyListener;
 import com.ia.logistics.comm.StringUtil;
 import com.ia.logistics.comm.widget.PullToRefreshListView;
+import com.ia.logistics.model.PackBean;
 import com.ia.logistics.model.receive.LoadListModel;
 import com.ia.logistics.sql.ADVT_DBHelper;
 import com.ia.logistics.sql.SQLTransaction;
@@ -58,7 +59,7 @@ public class EntruckingActivity extends BaseActivity {
 	private EntruckingAdapter mEntruckingAdapter;
 	private String bill_id, landingName, landingNum;
 	private PullToRefreshListView enListView;
-	private ArrayList<Map<String, String>> mList;
+	private ArrayList<PackBean> mList;
 	private AlertDialog alertDialog;
 	private Button backButton, confirmButton;
 	private int[] starlevels = { R.drawable.star, R.drawable.star_pitch_on };
@@ -164,6 +165,17 @@ public class EntruckingActivity extends BaseActivity {
 			}
 
 		}.execute();*/
+        mList = new ArrayList<>();
+        for (int i=0;i<10;i++){
+            PackBean bean = new PackBean();
+            bean.packageId = "pID"+i;
+            bean.grossWeight = "20"+i;
+            bean.netWeight= "20"+i;
+            bean.orderNum = "fwegwe"+i;
+            bean.productName = "西瓜";
+            mList.add(bean);
+
+        }
 		mEntruckingAdapter = new EntruckingAdapter(
 				EntruckingActivity.this, mHandler, mList, bill_id);
 		enListView.setAdapter(mEntruckingAdapter);
@@ -248,7 +260,7 @@ public class EntruckingActivity extends BaseActivity {
 	}
 
 	private void onRefreshData() {
-		new AsyncTask<Void, Void, String>() {
+		/*new AsyncTask<Void, Void, String>() {
 			protected String doInBackground(Void... params) {
 				return InterfaceDates.getInstance().insertPackInfo(bill_id,
 						EntruckingActivity.this);
@@ -263,14 +275,15 @@ public class EntruckingActivity extends BaseActivity {
 				}
 			}
 
-		}.execute();
+		}.execute();*/
 	}
 
 	/**
 	 * 签到
 	 */
 	private void signForArrival() {
-		new AsyncSendDataTask(EntruckingActivity.this) {
+		Toast.makeText(EntruckingActivity.this, "已签到", Toast.LENGTH_SHORT).show();
+		/*new AsyncSendDataTask(EntruckingActivity.this) {
 
 			@Override
 			protected String doInBackground(Object... params) {
@@ -293,7 +306,7 @@ public class EntruckingActivity extends BaseActivity {
 				super.onPostExecute(result);
 			}
 
-		}.execute();
+		}.execute();*/
 	}
 
 	/**
@@ -307,7 +320,7 @@ public class EntruckingActivity extends BaseActivity {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
-				new AsyncSendDataTask(EntruckingActivity.this) {
+				/*new AsyncSendDataTask(EntruckingActivity.this) {
 
 					@Override
 					protected String doInBackground(Object... params) {
@@ -356,7 +369,7 @@ public class EntruckingActivity extends BaseActivity {
 							return result;
 							// return resState;
 						} else { // 没网络
-							/*
+							*//*
 							 * HashMap<String, Object> map = new HashMap<String,
 							 * Object>(); SimpleDateFormat format = new
 							 * SimpleDateFormat("yyyyMMddHHmmss");
@@ -383,7 +396,7 @@ public class EntruckingActivity extends BaseActivity {
 							 * task = new
 							 * Task(ActivityTaskId.TASK_ENNTRUCKING_ACTIVITY
 							 * ,map); MainLogicService.addNewTask(task);
-							 */
+							 *//*
 
 							Toast.makeText(EntruckingActivity.this,
 									"网络不稳定,请重试!", 1).show();
@@ -424,7 +437,7 @@ public class EntruckingActivity extends BaseActivity {
 							StringUtil.showMessage(result, mContext);
 						}
 					}
-				}.execute(CommSet.checkNet(EntruckingActivity.this));
+				}.execute(CommSet.checkNet(EntruckingActivity.this));*/
 			}
 		});
 
@@ -443,6 +456,8 @@ public class EntruckingActivity extends BaseActivity {
 	}
 
 	private void initData() {
+		enListView.setVisibility(View.VISIBLE);
+		dataInList();
 		/*new AsyncTask<Void, Void, ArrayList<Map<String, String>>>() {
 
 			@Override
@@ -741,10 +756,10 @@ public class EntruckingActivity extends BaseActivity {
 		findViewById(R.id.bt_del).setVisibility(View.GONE);
 	}
 
-	private List<Map<String, String>> filterByKey(String key) {
-		List<Map<String, String>> resultList = new ArrayList<Map<String, String>>();
-		for (Map<String, String> iterable_element : mList) {
-			if (iterable_element.get("package_id").startsWith(key)) {
+	private List<PackBean> filterByKey(String key) {
+		List<PackBean> resultList = new ArrayList<PackBean>();
+		for (PackBean iterable_element : mList) {
+			if (iterable_element.packageId.startsWith(key)) {
 				resultList.add(iterable_element);
 			}
 		}

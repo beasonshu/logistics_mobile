@@ -19,7 +19,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="10px"
             android:background="@drawable/radiuslinearlayout_iteam_style"
-            android:text="签到"
+            android:text="装车"
             android:textColor="@android:color/white"
             android:textSize="15sp" >
         </Button>
@@ -49,7 +49,8 @@
 
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" >
+        android:layout_height="wrap_content"
+        >
 
         <include
             android:layout_width="match_parent"
@@ -62,6 +63,7 @@
             android:layout_height="79dp"
             android:content="@+id/content"
             android:handle="@+id/handle"
+            android:visibility="gone"
             android:orientation="horizontal" >
 
             <ImageButton
