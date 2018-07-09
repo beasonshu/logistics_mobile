@@ -133,6 +133,7 @@
                 android:gravity="center"
                 android:layout_weight="1"
                 android:text="日志"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:drawableTop="@drawable/log_icon"/>
         </LinearLayout>
@@ -151,6 +152,7 @@
                 android:gravity="center"
                 android:layout_weight="1"
                 android:text="帮助"
+                android:visibility="gone"
                 android:textColor="@color/white"
                 android:drawableTop="@drawable/help_icon"/>
 
