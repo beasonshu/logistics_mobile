@@ -16,6 +16,7 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10dp"
+            android:textColor="@android:color/white"
             android:background="@drawable/radiuslinearlayout_iteam_style"
             android:text="主页" />
 

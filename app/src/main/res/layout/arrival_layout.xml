@@ -47,7 +47,9 @@
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/arrival_edit"
-                android:background="@drawable/home" />
+                android:text="主页"
+                android:textColor="@android:color/white"
+                android:background="@drawable/radiuslinearlayout_iteam_style" />
 
             <Button
                 android:id="@+id/arrival_confirm"
