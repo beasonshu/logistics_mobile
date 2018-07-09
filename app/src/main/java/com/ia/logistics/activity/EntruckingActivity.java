@@ -320,6 +320,7 @@ public class EntruckingActivity extends BaseActivity {
 
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
+				changeViewByAct(DepartActivity.class, null);
 				/*new AsyncSendDataTask(EntruckingActivity.this) {
 
 					@Override

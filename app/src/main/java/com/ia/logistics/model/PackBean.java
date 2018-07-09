@@ -6,5 +6,6 @@ public class PackBean {
     public String grossWeight;
     public String netWeight;
     public String productName;
+    public String packageCount;
 
 }

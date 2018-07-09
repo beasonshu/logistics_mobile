@@ -22,6 +22,7 @@ import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.AsyncSendDataTask;
 import com.ia.logistics.comm.CommSet;
 import com.ia.logistics.comm.InterfaceDates;
+import com.ia.logistics.model.PackBean;
 import com.ia.logistics.service.MainLogicService;
 import com.ia.logistics.service.Task;
 import com.ia.logistics.sql.SQLTransaction;
@@ -29,11 +30,11 @@ import com.ia.logistics.comm.Constant;
 
 public class DepartAdapter extends BaseAdapter{
 	private LayoutInflater mInflater;
-	private List<Map<String, String>> dataList;
+	private List<PackBean> dataList;
 	private int layoutID;
 	private Handler mHandler;
 	private Context context;
-	public DepartAdapter(Context mContext,Handler mHandler,List<Map<String, String>> list) {
+	public DepartAdapter(Context mContext,Handler mHandler,List<PackBean> list) {
 		// TODO Auto-generated constructor stub
 		this.context = mContext;
 		this.mHandler = mHandler;
@@ -88,22 +89,17 @@ public class DepartAdapter extends BaseAdapter{
 		else {
 			holder = (ViewHolder)convertView.getTag();
 		}
-		if ("1".equals(dataList.get(position).get("bill_type"))) {
-			holder.imaginaryView.setVisibility(View.VISIBLE);
-			holder.part_packageID.setVisibility(View.GONE);
-		}else {
-			holder.imaginaryView.setVisibility(View.GONE);
-			holder.part_packageID.setVisibility(View.VISIBLE);
-			holder.part_packageID.setText(dataList.get(position).get("package_id"));
-		}
-		holder.part_billID.setText(dataList.get(position).get("bill_id"));
-		holder.part_contractID.setText(dataList.get(position).get("order_num"));
-		holder.part_spotName.setText(dataList.get(position).get("landing_spot_name"));
-		holder.part_destName.setText(dataList.get(position).get("dest_spot_name"));
-		holder.part_grossWeight.setText(dataList.get(position).get("gross_weight"));
-		holder.part_netWeight.setText(dataList.get(position).get("net_weight"));
-		holder.part_productType.setText(dataList.get(position).get("product_name"));
-		holder.part_sumcount.setText(dataList.get(position).get("package_count"));
+		holder.imaginaryView.setVisibility(View.GONE);
+		holder.part_packageID.setVisibility(View.VISIBLE);
+		holder.part_packageID.setText(dataList.get(position).packageId);
+		holder.part_billID.setText("2323"+position);
+		holder.part_contractID.setText(dataList.get(position).orderNum);
+		holder.part_spotName.setText("张江高科");
+		holder.part_destName.setText("徐汇");
+		holder.part_grossWeight.setText(dataList.get(position).grossWeight);
+		holder.part_netWeight.setText(dataList.get(position).netWeight);
+		holder.part_productType.setText(dataList.get(position).productName);
+		holder.part_sumcount.setText(dataList.get(position).packageCount);
 		//删除item
 		if (context.getSharedPreferences("mybill", Context.MODE_PRIVATE).getString("business_type", "").equals("10")) {
 			holder.part_imageButtoniodl_right.setVisibility(View.INVISIBLE);
@@ -127,7 +123,7 @@ public class DepartAdapter extends BaseAdapter{
 				public void onClick(DialogInterface dialog, int which) {
 					// TODO Auto-generated method stub
 					dialog.dismiss();
-					new AsyncSendDataTask(context) {
+					/*new AsyncSendDataTask(context) {
 						@Override
 						protected String doInBackground(Object... params) {
 							if ((Boolean) params[0]) { // 有网络
@@ -195,7 +191,7 @@ public class DepartAdapter extends BaseAdapter{
 							super.onPostExecute(result);
 						}
 
-					}.execute(CommSet.checkNet(context));
+					}.execute(CommSet.checkNet(context));*/
 				}
 			});
 			builder.setNegativeButton("取消", new DialogInterface.OnClickListener() {

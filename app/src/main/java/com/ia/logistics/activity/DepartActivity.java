@@ -29,6 +29,7 @@ import com.ia.logistics.comm.InterfaceDates;
 import com.ia.logistics.comm.MyApplications;
 import com.ia.logistics.comm.MyDialogOnKeyListener;
 import com.ia.logistics.comm.StringUtil;
+import com.ia.logistics.model.PackBean;
 import com.ia.logistics.service.MainLogicService;
 import com.ia.logistics.service.Task;
 import com.ia.logistics.sql.SQLTransaction;
@@ -43,7 +44,7 @@ public class DepartActivity extends BaseActivity {
 	private Button backButton, confirmButton;
 	private ListView departView;
 	private DepartAdapter mDepartAdapter;
-	private ArrayList<Map<String, String>> result_packList;
+	private ArrayList<PackBean> result_packList;
 	private AlertDialog alertDialog;
 	private DepartHandler mHandler = new DepartHandler(this);
 
@@ -67,7 +68,7 @@ public class DepartActivity extends BaseActivity {
 
 	// 初始化
 	private void init() {
-		result_packList = SQLTransaction.getInstance().getPackList(
+		/*result_packList = SQLTransaction.getInstance().getPackList(
 				Constant.PackageState.PACKAGE_UPLOADED, null);
 		if (result_packList.size() > 0) {
 			mDepartAdapter = new DepartAdapter(this, mHandler, result_packList);
@@ -78,12 +79,27 @@ public class DepartActivity extends BaseActivity {
 					.putString("localPage", "").commit();
 			changeViewByAct(MybillActivity.class, null);
 		}
+*/
+		result_packList = new ArrayList<>();
+        for (int i=0;i<10;i++){
+            PackBean bean = new PackBean();
+            bean.packageId = "pID"+i;
+            bean.grossWeight = "20"+i;
+            bean.netWeight= "20"+i;
+            bean.orderNum = "fwegwe"+i;
+            bean.productName = "西瓜";
+            result_packList.add(bean);
+
+        }
+        mDepartAdapter = new DepartAdapter(this, mHandler, result_packList);
+        departView.setAdapter(mDepartAdapter);
+        refreashCheckedWeight();
 
 	}
 
 	// 显示总毛重和净重
 	private void refreashCheckedWeight() {
-		new AsyncTask<Void, Void, Map<String, Number>>() {
+		/*new AsyncTask<Void, Void, Map<String, Number>>() {
 			@Override
 			protected Map<String, Number> doInBackground(Void... params) {
 				// TODO Auto-generated method stub
@@ -116,7 +132,7 @@ public class DepartActivity extends BaseActivity {
 						result.get("sum")));
 				super.onPostExecute(result);
 			}
-		}.execute();
+		}.execute();*/
 	}
 
 	// 按钮事情
@@ -195,7 +211,7 @@ public class DepartActivity extends BaseActivity {
 			@Override
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
-				new AsyncSendDataTask(DepartActivity.this) {
+				/*new AsyncSendDataTask(DepartActivity.this) {
 
 					@Override
 					protected String doInBackground(Object... params) {
@@ -214,7 +230,7 @@ public class DepartActivity extends BaseActivity {
 						super.onPostExecute(result);
 					}
 
-				}.execute();
+				}.execute();*/
 			}
 		});
 		alertDialog = b.create();
@@ -240,7 +256,7 @@ public class DepartActivity extends BaseActivity {
 		});
 		b.setPositiveButton("确认", new DialogInterface.OnClickListener() {
 			public void onClick(DialogInterface dialog, int which) {
-				new AsyncSendDataTask(DepartActivity.this) {
+				/*new AsyncSendDataTask(DepartActivity.this) {
 
 					@Override
 					protected String doInBackground(Object... params) {
@@ -298,9 +314,11 @@ public class DepartActivity extends BaseActivity {
 						super.onPostExecute(result);
 					}
 
-				}.execute(CommSet.checkNet(DepartActivity.this));
+				}.execute(CommSet.checkNet(DepartActivity.this));*/
+				changeViewByAct(ArrivalActivity.class, null);
 			}
 		});
+
 		alertDialog = b.create();
 		if (!alertDialog.isShowing()) {
 			alertDialog.show();

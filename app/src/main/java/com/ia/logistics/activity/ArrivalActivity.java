@@ -36,6 +36,7 @@ import com.ia.logistics.comm.CommSet;
 import com.ia.logistics.comm.InterfaceDates;
 import com.ia.logistics.comm.MyDialogOnKeyListener;
 import com.ia.logistics.comm.StringUtil;
+import com.ia.logistics.model.PackBean;
 import com.ia.logistics.model.receive.BillDestModel;
 import com.ia.logistics.service.MainLogicService;
 import com.ia.logistics.service.Task;
@@ -53,9 +54,9 @@ public class ArrivalActivity extends BaseActivity {
 	private ArrivalAdapter arrivalAdapter;
 	private DestinationAdapter destinationAdapter;
 	private TextView arrival_weight;
-	private static TextView arrival_dest_txt;
+	private TextView arrival_dest_txt;
 	private TextView dest_text;
-	private ArrayList<Map<String, String>> result_packList;
+	private ArrayList<PackBean> result_packList;
 	private List<BillDestModel> destionList;
 	private static String newAddress_name;
 	private static String newAddress_code;
@@ -86,8 +87,18 @@ public class ArrivalActivity extends BaseActivity {
 	// 初始化
 	private void datainit() {
 
-		result_packList = SQLTransaction.getInstance().getPackList(Constant.PackageState.PACKAGE_DEPARTED, null);
-		if (result_packList.size() > 0) {
+		result_packList = new ArrayList<>();
+		for (int i=0;i<10;i++){
+			PackBean bean = new PackBean();
+			bean.packageId = "pID"+i;
+			bean.grossWeight = "20"+i;
+			bean.netWeight= "20"+i;
+			bean.orderNum = "fwegwe"+i;
+			bean.productName = "西瓜";
+			result_packList.add(bean);
+
+		}
+		/*if (result_packList.size() > 0) {
 			arrivalAdapter = new ArrivalAdapter(this, mHandler, result_packList);
 			arrivalListView.setAdapter(arrivalAdapter);
 			arrivalAdapter.notifyDataSetChanged();
@@ -95,14 +106,17 @@ public class ArrivalActivity extends BaseActivity {
 			getSharedPreferences("localPage", 0).edit().putString("localPage", "").commit();
 			changeViewByAct(MybillActivity.class,null);
 			getSharedPreferences("mybill", 0).edit().putString("cch", null).commit();
-		}
+		}*/
+		arrivalAdapter = new ArrivalAdapter(this, mHandler, result_packList);
+		arrivalListView.setAdapter(arrivalAdapter);
+		arrivalAdapter.notifyDataSetChanged();
 		arrival_weight.setText("");
 	}
 
 
 	// 显示总毛重和净重
 	private void refreashCheckedWeight() {
-		new AsyncTask<Void, Void, Map<String, Number>>() {
+		/*new AsyncTask<Void, Void, Map<String, Number>>() {
 
 			@Override
 			protected Map<String, Number> doInBackground(Void... params) {
@@ -138,7 +152,7 @@ public class ArrivalActivity extends BaseActivity {
 						result.get("checked_sum"), result.get("sum")));
 				super.onPostExecute(result);
 			}
-		}.execute();
+		}.execute();*/
 	}
 
 	private void refreshData() {
@@ -209,12 +223,13 @@ public class ArrivalActivity extends BaseActivity {
 					//comfireDialog();
 				}
 
-				if (isSameArrivalName(arrivalAdapter.getSelectedItemIndexes().clone())||newAddress_name!=null) {
-					comfireDialog();
+				/*if (isSameArrivalName(arrivalAdapter.getSelectedItemIndexes().clone())||newAddress_name!=null) {
+
 				}else {
 					Toast.makeText(ArrivalActivity.this, "本次任务有多个到货地点,请修改收货地！",
 							Toast.LENGTH_SHORT).show();
-				}
+				}*/
+				comfireDialog();
 			}
 
 		});
@@ -225,7 +240,7 @@ public class ArrivalActivity extends BaseActivity {
 			@Override
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				new AsyncSendDataTask(ArrivalActivity.this) {
+				/*new AsyncSendDataTask(ArrivalActivity.this) {
 
 					@Override
 					protected String doInBackground(Object... params) {
@@ -258,7 +273,7 @@ public class ArrivalActivity extends BaseActivity {
 						super.onPostExecute(result);
 					}
 
-				}.execute(CommSet.checkNet(ArrivalActivity.this));
+				}.execute(CommSet.checkNet(ArrivalActivity.this));*/
 			}
 		});
 		// 更改收货地按钮事件
@@ -299,8 +314,8 @@ public class ArrivalActivity extends BaseActivity {
 	private void comfireDialog() {
 		findViewById(R.id.arrival_confirm).setClickable(false);
 		Builder dialog = new AlertDialog.Builder(this);
-		dialog.setTitle("到货确认");
-		dialog.setMessage("是否确认到货？");
+		dialog.setTitle("收货确认");
+		dialog.setMessage("是否确认收货？");
 		dialog.setNegativeButton("取消", new DialogInterface.OnClickListener() {
 
 			@Override
@@ -317,7 +332,9 @@ public class ArrivalActivity extends BaseActivity {
 			public void onClick(DialogInterface dialog, int which) {
 				// TODO Auto-generated method stub
 				alertDialog =null;
-				new AsyncSendDataTask(ArrivalActivity.this) {
+				changeViewByAct(MybillActivity.class,null);
+				StringUtil.showMessage("签收成功", ArrivalActivity.this);
+				/*new AsyncSendDataTask(ArrivalActivity.this) {
 
 					@Override
 					protected String doInBackground(Object... params) {
@@ -341,7 +358,7 @@ public class ArrivalActivity extends BaseActivity {
 												selectedList.get(0).get(
 														"dest_spot_num"),mContext);
 							}
-							/*if (!flag.startsWith("2#")) {
+							*//*if (!flag.startsWith("2#")) {
 								if (InterfaceDates.getInstance()
 										.HavingOldTrip(mContext)) {
 									if ("10".equals(MyApplications
@@ -366,7 +383,7 @@ public class ArrivalActivity extends BaseActivity {
 									}
 								}
 
-							}*/
+							}*//*
 							return flag;
 						} else {
 							return "3#";
@@ -382,20 +399,20 @@ public class ArrivalActivity extends BaseActivity {
 							mHandler.sendEmptyMessage(3);
 						}else if (result.startsWith("3#")) {
 							StringUtil.showMessage("网路不通！到货确认失败！", mContext);
-						}/*else if (result.startsWith("0#")) {
+						}*//*else if (result.startsWith("0#")) {
 								changeViewByAct(MybillActivity.class,null);
 								StringUtil.showMessage("数据已发送", mContext);
 							}else if (result.startsWith("4#")) {
 								mHandler.sendEmptyMessage(1);
 								StringUtil.showMessage("数据已更新", mContext);
-							}*/else {
+							}*//*else {
 							StringUtil.showMessage(result, mContext);
 						}
 						findViewById(R.id.arrival_confirm).setClickable(true);
 						super.onPostExecute(result);
 					}
 
-				}.execute(CommSet.checkNet(ArrivalActivity.this));
+				}.execute(CommSet.checkNet(ArrivalActivity.this));*/
 			}
 		});
 		if (alertDialog==null) {
@@ -424,7 +441,7 @@ public class ArrivalActivity extends BaseActivity {
 			public void onClick(DialogInterface dialog, int which) {
 				dialog.dismiss();
 				alertDialog = null;
-				new AsyncSendDataTask(ArrivalActivity.this) {
+				/*new AsyncSendDataTask(ArrivalActivity.this) {
 
 					@Override
 					protected String doInBackground(Object... params) {
@@ -489,7 +506,7 @@ public class ArrivalActivity extends BaseActivity {
 						super.onPostExecute(result);
 					}
 
-				}.execute(CommSet.checkNet(ArrivalActivity.this));
+				}.execute(CommSet.checkNet(ArrivalActivity.this));*/
 			}
 		});
 		if (alertDialog==null) {
@@ -506,7 +523,7 @@ public class ArrivalActivity extends BaseActivity {
 	 *
 	 */
 	public boolean isSameArrivalName(int[] arry) {
-		HashSet<String> set = new HashSet<String>();
+		/*HashSet<String> set = new HashSet<String>();
 		if (arry.length > 0) {
 			for (int i = 0; i < arry.length; i++) {
 				set.add(result_packList.get(arry[i]).get("dest_spot_name"));
@@ -516,7 +533,7 @@ public class ArrivalActivity extends BaseActivity {
 			} else {
 				return false;
 			}
-		}
+		}*/
 		return false;
 	}
 
@@ -584,7 +601,7 @@ public class ArrivalActivity extends BaseActivity {
 						arrivalActivity.refreashCheckedWeight();
 						break;
 					case 3:
-						arrival_dest_txt.setText("");
+//						arrival_dest_txt.setText("");
 						arrivalActivity.refreshData();
 						arrivalActivity.refreashCheckedWeight();
 						break;

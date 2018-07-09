@@ -24,15 +24,16 @@ import android.widget.Toast;
 
 import com.ia.logistics.activity.R;
 import com.ia.logistics.comm.CommSet;
+import com.ia.logistics.model.PackBean;
 
 public class ArrivalAdapter extends BaseAdapter {
 	private LayoutInflater mInflater;
-	private List<Map<String, String>> dataList;
+	private List<PackBean> dataList;
 	private Handler mHandler;
 	private Context context;
 	private boolean[] itemStatus,isExpand;
 	public ArrivalAdapter(Context mContext, Handler mHandler,
-						  List<Map<String, String>> list) {
+						  List<PackBean> list) {
 		// TODO Auto-generated constructor stub
 		this.context = mContext;
 		this.mHandler = mHandler;
@@ -133,27 +134,21 @@ public class ArrivalAdapter extends BaseAdapter {
 		}else {
 			holder = (ViewHolder)convertView.getTag();
 		}
-		holder.arrival_billID.setText(dataList.get(position).get("bill_id"));
-		holder.arrival_contractID.setText(dataList.get(position).get("order_num"));
-		holder.arrival_spotName.setText(dataList.get(position).get("landing_spot_name"));
-		holder.arrival_destName.setText(dataList.get(position).get("dest_spot_name"));
-		holder.arrival_grossWeight.setText(dataList.get(position).get("gross_weight"));
-		holder.arrival_netWeight.setText(dataList.get(position).get("net_weight"));
-		holder.arrival_productType.setText(dataList.get(position).get("product_name"));
-		holder.arrival_sumcount.setText(dataList.get(position).get("package_count"));
+		holder.arrival_billID.setText("wgwe"+position);
+		holder.arrival_contractID.setText(dataList.get(position).orderNum);
+		holder.arrival_spotName.setText("浦东");
+		holder.arrival_destName.setText("张江");
+		holder.arrival_grossWeight.setText(dataList.get(position).grossWeight);
+		holder.arrival_netWeight.setText(dataList.get(position).netWeight);
+		holder.arrival_productType.setText(dataList.get(position).productName);
+		holder.arrival_sumcount.setText(dataList.get(position).packageCount);
 		holder.arrival_detach_weight.setOnEditorActionListener(new MyEditorActionListener(convertView, position));
 		holder.arrival_detach_count.setOnEditorActionListener(new MyEditorActionListener(convertView, position));
 		holder.arrival_Box.setOnCheckedChangeListener(new MyCheckBoxChangedListener(position,convertView));
-		if ("1".equals(dataList.get(position).get("bill_type"))) {// there is no real packages
-			holder.arrival_imaginary.setVisibility(View.VISIBLE);
-			holder.arrival_packageID.setVisibility(View.GONE);
-			convertView.setOnClickListener(new MyConvertViewListener(convertView,position));
-		}else {
-			holder.arrival_packageID.setVisibility(View.VISIBLE);
-			holder.arrival_imaginary.setVisibility(View.GONE);
-			holder.arrival_packageID.setText(dataList.get(position).get("package_id"));
-			holder.arrival_detail_image.setVisibility(View.INVISIBLE);
-		}
+		holder.arrival_packageID.setVisibility(View.VISIBLE);
+		holder.arrival_imaginary.setVisibility(View.GONE);
+		holder.arrival_packageID.setText(dataList.get(position).packageId);
+		holder.arrival_detail_image.setVisibility(View.INVISIBLE);
 		if (itemStatus[position] == true) {
 			holder.arrival_Box.setChecked(true);
 		} else {
@@ -191,7 +186,7 @@ public class ArrivalAdapter extends BaseAdapter {
 	 * @param view
 	 */
 	private void changeImaginaryVisable(View view,int position) {
-		ViewHolder holder = (ViewHolder) view.getTag();
+		/*ViewHolder holder = (ViewHolder) view.getTag();
 		switch (holder.arrival_hint_layout.getVisibility()) {
 			case View.VISIBLE:
 				holder.arrival_detail_image.setBackgroundResource(R.drawable.widget_expander_ic_minimized);
@@ -206,7 +201,7 @@ public class ArrivalAdapter extends BaseAdapter {
 				dataList.get(position).put("detachFlag", "0");
 				isExpand[position] = true;
 				break;
-		}
+		}*/
 	}
 
 	/**
@@ -241,7 +236,7 @@ public class ArrivalAdapter extends BaseAdapter {
 		String detachWeightString = holder.arrival_detach_weight.getText().toString().trim();
 		String detachCountString = holder.arrival_detach_count.getText().toString().trim();
 
-		float sumWeight = Float.parseFloat(dataList.get(index).get("gross_weight"));
+		/*float sumWeight = Float.parseFloat(dataList.get(index).get("gross_weight"));
 		float sumCount = Float.parseFloat(dataList.get(index).get("package_count"));
 		if (!(detachWeightString.length()==0 | detachCountString.length()==0)) {
 			float detachWeight = Float.parseFloat(detachWeightString);
@@ -256,7 +251,7 @@ public class ArrivalAdapter extends BaseAdapter {
 				itemStatus[index] = false;
 				dataList.get(index).put("detachFlag", "0");
 			}
-		}
+		}*/
 	}
 
 	/**
@@ -265,10 +260,10 @@ public class ArrivalAdapter extends BaseAdapter {
 	 */
 	public ArrayList<Map<String, String>> getSelectedPK() {
 		ArrayList<Map<String, String>> resultList = new ArrayList<Map<String,String>>();
-		int[] temp = getSelectedItemIndexes().clone();
+		/*int[] temp = getSelectedItemIndexes().clone();
 		for (int i = 0; i < temp.length; i++) {
 			resultList.add(dataList.get(temp[i]));
-		}
+		}*/
 		return resultList;
 	}
 
@@ -287,7 +282,7 @@ public class ArrivalAdapter extends BaseAdapter {
 		@Override
 		public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
 			// TODO Auto-generated method stub
-			ViewHolder holder = (ViewHolder) convertView.getTag();
+			/*ViewHolder holder = (ViewHolder) convertView.getTag();
 			if (actionId == EditorInfo.IME_ACTION_DONE) {
 				if (v.getId()==R.id.arrival_detach_weight) {
 					String detachWeightString = holder.arrival_detach_weight.getText().toString().trim();
@@ -314,7 +309,7 @@ public class ArrivalAdapter extends BaseAdapter {
 						}
 					}
 				}
-			}
+			}*/
 			return false;
 		}
 
