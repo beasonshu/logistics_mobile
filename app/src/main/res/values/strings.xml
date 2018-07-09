@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">司机端</string>
+    <string name="app_name">货物跟踪</string>
     <string name="checked_weight_sum">已装毛重：%1$.3f吨   已装净重：%2$.3f吨  已装件数：%3$d件</string>
     <string name="checked_select_sum">已选毛重：%1$.3f吨   已选净重：%2$.3f吨  件数：%3$d/%4$d件</string>
     <string name="AgentService">http://m.baosteel.net.cn/iPlatMBS/AgentService</string>
