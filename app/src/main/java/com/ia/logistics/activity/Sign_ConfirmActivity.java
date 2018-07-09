@@ -237,7 +237,7 @@ public class Sign_ConfirmActivity extends Activity {
 			protected String doInBackground(Object... params) {
 				// TODO Auto-generated method stub
 				if ((Boolean) params[0]) { // 有网络
-					// 发送车次号
+					// 发送火车车次任务
 					setSign_tips();// 获取签收备注信息
 					String tpsj = "";
 					if (bitmap != null) {

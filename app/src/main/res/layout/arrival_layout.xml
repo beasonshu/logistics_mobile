@@ -80,7 +80,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="15dp"
-                android:text="车次号："
+                android:text="火车车次任务："
                 android:textColor="#000" />
 
             <TextView

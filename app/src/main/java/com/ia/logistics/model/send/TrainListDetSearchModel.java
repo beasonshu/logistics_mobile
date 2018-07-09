@@ -14,7 +14,7 @@ public class TrainListDetSearchModel {
 	 */
 	private String myts;
 	/**
-	 * 车次号
+	 * 火车车次任务
 	 */
 	private String cch;
 	/**

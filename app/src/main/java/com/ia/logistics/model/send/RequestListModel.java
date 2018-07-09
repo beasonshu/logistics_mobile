@@ -12,7 +12,7 @@ public class RequestListModel {
 	private String sjdm;
 
 	/**
-	 * 车次号
+	 * 火车车次任务
 	 */
 	private String cch;
 

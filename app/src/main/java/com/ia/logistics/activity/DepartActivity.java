@@ -251,7 +251,7 @@ public class DepartActivity extends BaseActivity {
 										Constant.PackageState.PACKAGE_UPLOADED, true);
 						if (b) {
 							if ((Boolean) params[0]) { // 有网络
-								// 发送车次号
+								// 发送火车车次任务
 								String fhbz = InterfaceDates.getInstance()
 										.sendLeaveRst(mContext, "10");
 								// return fhbz;

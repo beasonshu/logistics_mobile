@@ -8,7 +8,7 @@ public class DisPatchPlanStaSearchModel {
 
 	public static final String Node_Name = "state";
 	/**
-	 * 车次号
+	 * 火车车次任务
 	 */
 	private String cch;
 	/**

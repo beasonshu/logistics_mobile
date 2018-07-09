@@ -8,7 +8,7 @@ public class LoadListModel {
 
 	public static final String Node_Name = "car";
 	/**
-	 * 车次号
+	 * 火车车次任务
 	 */
 	private String cch;
 	/**

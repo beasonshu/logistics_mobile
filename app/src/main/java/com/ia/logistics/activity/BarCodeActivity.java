@@ -43,7 +43,7 @@ public class BarCodeActivity extends BaseComActivity {
 			SharedPreferences preferences = getSharedPreferences("mybill", 0);
 			buffer.append("司机:"+ MyApplications.getInstance().getUser_name());
 			buffer.append(",车牌号："+preferences.getString("lasthead", ""));
-			buffer.append(",车次号："+preferences.getString("cch", ""));
+			buffer.append(",火车车次任务："+preferences.getString("cch", ""));
 			List<SignDetilModel> mList = MyApplications.getInstance().getCacheList();
 			for (SignDetilModel signDetilModel : mList) {
 				buffer.append(",材料号："+signDetilModel.getClh());

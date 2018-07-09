@@ -101,7 +101,7 @@ public class MainLogicService extends Service implements Runnable {
 			case ActivityTaskId.TASK_DEPART_ACTIVITY:
 				if (depart()) {
 					allTask.poll();
-					Log.d("MainLogicService", "发车发送车次号");
+					Log.d("MainLogicService", "发车发送火车车次任务");
 				}
 				break;
 			case ActivityTaskId.TASK_ARRIVAL_BACK:

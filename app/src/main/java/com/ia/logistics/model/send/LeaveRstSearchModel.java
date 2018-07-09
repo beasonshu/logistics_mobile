@@ -7,7 +7,7 @@ public class LeaveRstSearchModel {
 	 */
 	public static final String Node_Name = "lev";
 	/**
-	 * 车次号
+	 * 火车车次任务
 	 */
 	private String cch;
 

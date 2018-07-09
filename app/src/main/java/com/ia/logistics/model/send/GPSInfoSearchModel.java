@@ -40,7 +40,7 @@ public class GPSInfoSearchModel {
 	 */
 	private String sjxm;
 	/**
-	 *车次号
+	 *火车车次任务
 	 */
 	private String cch;
 

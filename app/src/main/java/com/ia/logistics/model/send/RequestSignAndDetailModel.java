@@ -4,7 +4,7 @@ public class RequestSignAndDetailModel {
 
 	public static final String Node_Name = "qs";
 
-	private String cch;//TRUCK_NO	车次号
+	private String cch;//TRUCK_NO	火车车次任务
 	private String sjdm;//DRI_U_CODE	司机U代码
 	private String cph;//FRONT_CODE	车牌号
 	private String qszt;//SIGN_Status	签收状态	"“00”拒绝签收；“10”未签收；“20”异常签收；“30”正常签收"
@@ -73,7 +73,7 @@ public class RequestSignAndDetailModel {
 
 }
 /*
-TRUCK_NO	车次号
+TRUCK_NO	火车车次任务
 DRI_U_CODE	司机U代码
 FRONT_CODE	车牌号
 SIGN_Status	签收状态	"“00”拒绝签收；“10”未签收；“20”异常签收；
