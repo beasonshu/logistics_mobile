@@ -28,7 +28,7 @@
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
             android:layout_marginLeft="10px"
-            android:background="@drawable/btn_left_bg"
+            android:background="@drawable/radiuslinearlayout_iteam_style"
             android:text="返回"
             android:textColor="@android:color/white"
             android:textSize="15sp" >
@@ -41,7 +41,7 @@
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
             android:layout_marginRight="10px"
-            android:background="@drawable/btn_bg"
+            android:background="@drawable/radiuslinearlayout_iteam_style"
             android:text="确认"
             android:textColor="@android:color/white"
             android:textSize="15sp" >

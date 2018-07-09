@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_centerVertical="true"
-            android:background="@drawable/btn_left_bg"
+            android:background="@drawable/radiuslinearlayout_iteam_style"
             android:text="返回"
             android:textColor="@android:color/white"
             android:textSize="15sp" >
