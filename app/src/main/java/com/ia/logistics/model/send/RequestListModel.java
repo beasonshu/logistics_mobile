@@ -12,7 +12,7 @@ public class RequestListModel {
 	private String sjdm;
 
 	/**
-	 * 火车车次任务
+	 * com.baosight.iplat4mandroid车次任务
 	 */
 	private String cch;
 

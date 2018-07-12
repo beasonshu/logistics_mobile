@@ -8,7 +8,7 @@ public class LoadListModel {
 
 	public static final String Node_Name = "car";
 	/**
-	 * 火车车次任务
+	 * com.baosight.iplat4mandroid车次任务
 	 */
 	private String cch;
 	/**

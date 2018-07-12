@@ -9,7 +9,7 @@ public class SignsModel extends MarkerModel {
 
 	public static final String Node_Name = "signSend";
 	private String qsdid;//签收单Id
-	private String cch;//火车车次任务
+	private String cch;//com.baosight.iplat4mandroid车次任务
 	private String ctdm;//车牌号(车头代码)
 	private String qssj;//签收时间
 	private String qsbz;//签收备注

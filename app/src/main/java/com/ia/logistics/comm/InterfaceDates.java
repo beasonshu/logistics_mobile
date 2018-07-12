@@ -630,7 +630,7 @@ public class InterfaceDates {
 								//整个车次做完业务类型必须清空
 										putString("business_type", receive.get(0).getYwlx()).commit();
 						CommSet.d("旧的车次", remote_cch);
-						System.err.println("是否有旧的火车车次任务-------"+remote_cch);
+						System.err.println("是否有旧的com.baosight.iplat4mandroid车次任务-------"+remote_cch);
 						MyApplications.getInstance().setTrip_state(
 								receive.get(0).getGczt());
 						return true;

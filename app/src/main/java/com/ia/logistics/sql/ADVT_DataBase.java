@@ -127,7 +127,7 @@ public class ADVT_DataBase{
 		Map<String, String> fileds = new HashMap<String, String>();
 		//任务主表字段
 		String[] PACKAGE_FILEDS = {
-				"car_trip_num",	     		//火车车次任务
+				"car_trip_num",	     		//com.baosight.iplat4mandroid车次任务
 				"user_id",					//司机代码			
 				"user_name",				//司机姓名			
 				"provider_id",			    //承运商代码	

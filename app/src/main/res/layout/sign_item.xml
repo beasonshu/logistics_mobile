@@ -12,7 +12,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginLeft="5px"
         android:layout_marginTop="2px"
-        android:text="火车车次号："
+        android:text="com.baosight.iplat4mandroid车次号："
         android:textColor="@color/black"
         android:textSize="18sp" />
 
@@ -24,7 +24,7 @@
         android:layout_alignBottom="@+id/sign_parent_signId00"
         android:layout_marginLeft="2px"
         android:layout_toRightOf="@+id/sign_parent_signId00"
-        android:text="火车车次号123"
+        android:text="com.baosight.iplat4mandroid车次号123"
         android:textColor="@color/black"
         android:textSize="18sp" />
 
@@ -35,7 +35,7 @@
         android:layout_alignLeft="@+id/sign_parent_signId00"
         android:layout_below="@+id/sign_parent_signId00"
         android:layout_marginTop="2px"
-        android:text="火车车次任务："
+        android:text="com.baosight.iplat4mandroid车次任务："
         android:textColor="@color/gray"
         android:textSize="14sp" />
 

@@ -4,11 +4,11 @@ public class RequestSignAndDetailModel {
 
 	public static final String Node_Name = "qs";
 
-	private String cch;//TRUCK_NO	火车车次任务
+	private String cch;//TRUCK_NO	com.baosight.iplat4mandroid车次任务
 	private String sjdm;//DRI_U_CODE	司机U代码
 	private String cph;//FRONT_CODE	车牌号
 	private String qszt;//SIGN_Status	签收状态	"“00”拒绝签收；“10”未签收；“20”异常签收；“30”正常签收"
-	private String qsh;//SIGN_ID	火车车次号
+	private String qsh;//SIGN_ID	com.baosight.iplat4mandroid车次号
 	private String cysdm;//PROVIDER_ID	承运商代码
 	private String tpsj;//SIGN_PIC	图片数据
 	private String qsbz;//Memo	签收备注信息
@@ -73,7 +73,7 @@ public class RequestSignAndDetailModel {
 
 }
 /*
-TRUCK_NO	火车车次任务
+TRUCK_NO	com.baosight.iplat4mandroid车次任务
 DRI_U_CODE	司机U代码
 FRONT_CODE	车牌号
 SIGN_Status	签收状态	"“00”拒绝签收；“10”未签收；“20”异常签收；

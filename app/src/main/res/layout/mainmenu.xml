@@ -110,7 +110,7 @@
                 android:textSize="14sp"
                 android:gravity="center"
                 android:layout_weight="1"
-                android:text="火车车次任务"
+                android:text="com.baosight.iplat4mandroid车次任务"
                 android:textColor="@color/white"
                 android:drawableTop="@drawable/task"/>
 
